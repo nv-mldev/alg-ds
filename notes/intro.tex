@@ -160,33 +160,6 @@ math.sqrt(16)
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Abstract Data Types vs. Data Structures}
-    \centering
-    \begin{tikzpicture}
-        % User
-        \node[rectangle, rounded corners, draw, fill=blue!10, minimum width=2cm, minimum height=1cm] (user) at (0,4) {User};
-        
-        % Interface
-        \node[rectangle, rounded corners, draw, fill=green!10, minimum width=5cm, minimum height=1.5cm] (interface) at (0,2) {Interface (ADT)};
-        \node[text width=4cm, align=center] at (0,2) {Operations\\ (add, remove, search, etc.)};
-        
-        % Implementation
-        \node[rectangle, rounded corners, draw, fill=red!10, minimum width=5cm, minimum height=1.5cm] (implementation) at (0,0) {Implementation (Data Structure)};
-        \node[text width=4cm, align=center] at (0,0) {Physical representation\\ using programming constructs};
-        
-        % Arrows
-        \draw[->, thick] (user) -- (interface);
-        \draw[->, thick, dashed] (interface) -- (implementation);
-        
-        % Labels
-        \node[text width=3cm, align=center] at (3,3) {User interacts with interface};
-        \node[text width=3cm, align=center] at (3,1) {Implementation details hidden};
-    \end{tikzpicture}
-    
-    \vspace{0.3cm}
-    \small{Figure: Abstract Data Type and its operation}
-\end{frame}
-
 \begin{frame}{ADT Implementation}
     \begin{itemize}
         \item Implementation of an ADT is called a data structure
@@ -197,21 +170,7 @@ math.sqrt(16)
     \end{itemize}
 \end{frame}
 
-\section{Python Data Structures}
-\begin{frame}{Built in atomic datatypes}
-    \begin{itemize}
-        \item Python provides built-in data types
-        \item These types are used to represent data in programs
-        \item Common data types include:
-        \begin{itemize}
-            \item Integers
-            \item Floats
-            \item Strings
-            \item Booleans
-        \end{itemize}
-    \end{itemize}
 
-\end{frame}
 
     
 
@@ -241,9 +200,114 @@ math.sqrt(16)
 \begin{frame}
     \begin{figure}
         \centering
-        \includegraphics[width=0.8\textwidth]{pics/objects.png}
+        \includegraphics[width=1.0\textwidth]{pics/objects.png}
         \caption{Objects in Python}
     \end{figure}
 \end{frame}
 
+\section{Python Data Structures}
+\begin{frame}{Built in atomic datatypes}
+    \begin{itemize}
+        \item Python provides built-in data types
+        \item These types are used to represent data in programs
+        \item Common data types include:
+        \begin{itemize}
+            \item Integers
+            \item Floats
+            \item Strings
+            \item Booleans
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Operators and Expressions}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{itemize}
+            \item Objects can be combined using operators
+            \item Arithmrtic operators in python 
+            \begin{itemize}
+            \item \texttt{+} (addition)
+            \item \texttt{-} (subtraction)
+            \item \texttt{*} (multiplication)
+            \item \texttt{/} (division)
+            \item \texttt{//} (floor division, or integer part of division)
+            \item \texttt{\%} (modulo, or remainder after division)
+            \item \texttt{**} (exponential - raised to the power)
+            \end{itemize}
+                    \end{itemize}
+        \column{0.5\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.8\textwidth]{pics/operator.png}
+            \caption{Operators in Python}
+        \end{figure}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Overloaded Operators}
+    \begin{itemize}
+        \item Some operators are not limited to arithmetic operations with numbers.
+        \item For example, \texttt{+} and \texttt{*} can be used for a different kind of operation when used with strings.
+    \end{itemize}
+    \begin{lstlisting}{python}
+>>> 'hello' + 'world'
+'helloworld'
+>>> 'hello' * 3
+'hellohellohello'
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}{Variables}
+    In Python, a variable is simply a name or a label that points to an object instance in memory
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{pics/variable.png}
+        \caption{Variables in Python}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Variable Assignments}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.8\textwidth]{pics/assignment.png}
+            \caption{Variable Assignment}
+        \end{figure}
+        \column{0.5\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.8\textwidth]{pics/assignment2.png}
+            \caption{Variable Assignment}
+        \end{figure}
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}[fragile]{Variable Assignment}
+    \begin{lstlisting}{python}
+>>> x = 20
+>>> y = x
+>>> x = "hello"
+>>> print(y)
+20
+>>> print(x)
+hello
+    \end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Naming Variables}
+    \begin{itemize}
+        \item Variable names must start with a letter or an underscore
+        \item The rest of the name can contain letters, numbers, and underscores
+        \item Variable names are case-sensitive
+        \item Variable names should be descriptive
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Reserved Keywords}
+\end{frame}
 \end{document}
