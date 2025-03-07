@@ -1,0 +1,21 @@
+\frametitle{Procedural Abstraction}
+\begin{itemize}
+        \item Users (clients) do not need to know implementation details.
+        \item The interface provides a way to interact with complex implementations.
+        \item Example: Python's \texttt{math} module.
+    \end{itemize}
+
+    \vspace{0.5cm} % Adds space for better readability
+
+
+    \begin{lstlisting}
+import math
+math.sqrt(16)
+    \end{lstlisting}
+
+    \vspace{0.5cm} % Adds space before continuing the list
+
+    \begin{itemize}
+        \item We do not need to know how \texttt{sqrt} is implemented.
+        \item We only need to know its name and how to use it.
+    \end{itemize}
