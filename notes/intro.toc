@@ -1,1 +1,2 @@
-\beamer@sectionintoc {1}{Python Data Structures}{18}{0}{1}
+\beamer@sectionintoc {1}{Python Data Structures}{17}{0}{1}
+\beamer@sectionintoc {2}{Control Structures}{39}{0}{2}

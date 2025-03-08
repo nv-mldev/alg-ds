@@ -1,15 +1,11 @@
-\frametitle{Converting 2D Index to 1D Index}
-\begin{itemize}
-        \item User provides the number of rows \(R\), number of columns \(C\), and a 2D index \((r, c)\)
-        \item Convert the 2D index \((r, c)\) to a 1D index \(s\) using row-major ordering.
-    \end{itemize}
-    \begin{lstlisting}{python}
-# Get user input
-R = int(input("Enter the number of rows: "))
-C = int(input("Enter the number of columns: "))
-r = int(input("Enter the row index: "))
-c = int(input("Enter the column index: "))
-s = r*R + c
-# Print the result
-print(f"The 1D index is: {s}")
+\frametitle{While Loop Example}
+\begin{lstlisting}[style=colorful, language=Python]
+i = 0
+while i < 5:
+    print(i)
+    i += 1
     \end{lstlisting}
+    \begin{itemize}
+        \item In this example, the \texttt{while} loop prints the value of \texttt{i} as long as \texttt{i} is less than 5.
+        \item The value of \texttt{i} is incremented by 1 in each iteration.
+    \end{itemize}

@@ -6,15 +6,49 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{tikz}
+% Define custom colors
+\definecolor{background}{RGB}{240,240,240}  % Light gray
+\definecolor{keyword}{RGB}{0,102,204}       % Blue
+\definecolor{comment}{RGB}{0,153,51}        % Green
+\definecolor{string}{RGB}{204,51,0}         % Dark red
+\definecolor{identifier}{RGB}{0,0,0}        % Black
+\definecolor{number}{RGB}{153,0,153}        % Purple
 
-\lstset{
-    language=Python,
-    basicstyle=\ttfamily\footnotesize,
-    keywordstyle=\color{blue},
-    commentstyle=\color{gray},
-    stringstyle=\color{red},
-    frame=single
+\lstdefinestyle{colorful}{
+    backgroundcolor=\color{background},
+    keywordstyle=\color{keyword}\bfseries,
+    commentstyle=\color{comment}\itshape,
+    stringstyle=\color{string},
+    identifierstyle=\color{identifier},
+    numberstyle=\color{number},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    framerule=2pt,
+    rulecolor=\color{keyword},
+    numbers=left,
+    numbersep=8pt,
+    numberstyle=\color{number},
+    showstringspaces=false,
+    tabsize=4
 }
+
+% \lstset{
+%   language=Python,
+%   basicstyle=\fontfamily{pcr}\selectfont\footnotesize, % Using Arial font
+%   keywordstyle=\color{blue},
+%   commentstyle=\color{gray},
+%   stringstyle=\color{red},
+%   numbers=left,
+%   numberstyle=\tiny\color{black},
+%   breaklines=true,
+%   breakatwhitespace=true,
+%   backgroundcolor=\color{lightgray!10},
+%   showstringspaces=false,          % Don't highlight spaces in strings
+%   frame=single,                   % Add a frame around code blocks
+%   tabsize=4,                      % Set tab size to 4 spaces
+%   % escapeinside={\%*}{*)}         % Commenting out escapeinside for now
+% }
 %Information to be included in the title page:
 
 \title{Understanding Computer Science}
@@ -67,7 +101,7 @@
     \vspace{0.5cm} % Adds space for better readability
 
     
-    \begin{lstlisting}
+    \begin{lstlisting}[style=colorful, language=Python]
 import math
 math.sqrt(16)
     \end{lstlisting}
@@ -174,19 +208,7 @@ math.sqrt(16)
 
     
 
-\begin{frame}{Python Data Structures}
-    \begin{itemize}
-        \item Python provides built-in data structures
-        \item These structures are used to represent data in programs
-        \item Common data structures include:
-        \begin{itemize}
-            \item Lists
-            \item Tuples
-            \item Sets
-            \item Dictionaries
-        \end{itemize}
-    \end{itemize}
-\end{frame}
+
 
 
 \begin{frame}{Objects}
@@ -272,7 +294,7 @@ math.sqrt(16)
         \item Some operators are not limited to arithmetic operations with numbers.
         \item For example, \texttt{+} and \texttt{*} can be used for a different kind of operation when used with strings.
     \end{itemize}
-    \begin{lstlisting}{python}
+    \begin{lstlisting}[style=colorful, language=Python][style=colorful, language=Python]
 >>> 'hello' + 'world'
 'helloworld'
 >>> 'hello' * 3
@@ -308,7 +330,7 @@ math.sqrt(16)
 \end{frame}
 
 \begin{frame}[fragile]{Variable Assignment}
-    \begin{lstlisting}{python}
+    \begin{lstlisting}[style=colorful, language=Python][style=colorful, language=Python]
 >>> x = 20
 >>> y = x
 >>> x = "hello"
@@ -330,7 +352,7 @@ hello
 \end{frame}
 
 \begin{frame}[fragile]{Reserved Keywords}
-    \begin{lstlisting}{Python}
+    \begin{lstlisting}[style=colorful, language=Python][style=colorful, language=Python]
      >>> import keyword
      >>> keyword.kwlist      
     \end{lstlisting}
@@ -355,7 +377,7 @@ hello
 
 
 \begin{frame}[fragile]{Python Quiz-1}
-\begin{lstlisting}{Python}
+\begin{lstlisting}[style=colorful, language=Python][style=colorful, language=Python]
 >>> 5 == 5.0000
 >>> 1+2 == 3 
 >>> 9 > 8.999999999999999
@@ -371,7 +393,7 @@ hello
         \item However, comparisons involving inequality are less likely to be affected.
         \item Example: \texttt{9 > 8.999999999999999} evaluates to \texttt{True}.
     \end{itemize}
-    \begin{lstlisting}{python}
+    \begin{lstlisting}[style=colorful, language=Python][style=colorful, language=Python]
 >>> 1.1 + 2.2 == 3.3
 False
 >>> 9 > 8.999999999999999
@@ -381,7 +403,7 @@ True
 
 \begin{frame}[fragile]
     \frametitle{Python Quiz-2}
-    \begin{lstlisting}{Python}
+    \begin{lstlisting}[style=colorful, language=Python][style=colorful, language=Python]
 >>> 5 != 5.0000
 >>> True != False
 >>> False < True
@@ -394,7 +416,8 @@ True
         \item When comparing two strings, Python compares the "Unicode code point" of the first character of each string.
         \item If the first characters are the same, it compares the second characters, and so on, until one of the strings ends
     \end{itemize}
-    \begin{lstlisting}{python}
+\pause
+    \begin{lstlisting}[style=colorful, language=Python][style=colorful, language=Python]
 >>> "10" > "2"
 False
 >>> ord("1")
@@ -402,6 +425,9 @@ False
 >>> ord("2")
 50
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
     \begin{itemize}
         \item This explains why files on your computer might be sorted in this order:
         \begin{itemize}
@@ -422,7 +448,7 @@ False
         \item Assign an identifier to the robot, e.g., \texttt{identifier = 1000}.
         \item Print a message from the robot using \texttt{print()}.
     \end{itemize}
-    \begin{lstlisting}{Python}
+    \begin{lstlisting}[style=colorful, language=Python][style=colorful, language=Python]
 >>> name = input("Enter the robot's name: ")
 >>> identifier = 1000
 >>> print(f"Hello. My name is {name}. My ID is {identifier}.")
@@ -434,7 +460,7 @@ False
         \item User provides the number of rows \(R\), number of columns \(C\), and a 2D index \((r, c)\)
         \item Convert the 2D index \((r, c)\) to a 1D index \(s\) using row-major ordering.
     \end{itemize}
-    \begin{lstlisting}{python}
+    \begin{lstlisting}[style=colorful, language=Python][style=colorful, language=Python]
 # Get user input
 R = int(input("Enter the number of rows: "))
 C = int(input("Enter the number of columns: "))
@@ -446,6 +472,237 @@ print(f"The 1D index is: {s}")
     \end{lstlisting}
 \end{frame}
 
+\begin{frame}{What are Chained Comparisons?}
+    \begin{itemize}
+      \item Python allows multiple comparison operators to be chained together in a single expression.
+      \item This creates a more readable and concise way to express complex comparisons.
+      \item The comparisons are evaluated from left to right, and they are implicitly combined using the logical \texttt{and} operator.
+    \end{itemize}
+  \end{frame}
+  
+  \begin{frame}[fragile]{Example 1: Simple Range Check}
+    \begin{itemize}
+      \item Consider checking if a variable \texttt{x} is within a specific range.
+      \item Without chained comparisons:
+        \begin{lstlisting}[style=colorful, language=Python]
+  if 10 < x and x < 20:
+      # ...
+        \end{lstlisting}
+      \item With chained comparisons:
+        \begin{lstlisting}[style=colorful, language=Python]
+  if 10 < x < 20:
+      # ...
+        \end{lstlisting}
+      \item Both are equivalent, but the chained version is more readable.
+    \end{itemize}
+  \end{frame}
+  
+  \begin{frame}[fragile]{Example 2: Multiple Comparisons}
+    \begin{lstlisting}[style=colorful, language=Python]
+  x = 5
+  y = 10
+  z = 15
+  if x < y < z:
+      print("x < y < z is True")
+    \end{lstlisting}
+    \begin{itemize}
+      \item This checks if \texttt{x} is less than \texttt{y} AND \texttt{y} is less than \texttt{z}.
+    \end{itemize}
+  \end{frame}
+  
+  \begin{frame}[fragile]{Example 3: Equality and Inequality}
+      \begin{lstlisting}[style=colorful, language=Python]
+  a = 10
+  b = 10
+  c = 15
+  if a == b < c:
+      print("a==b<c is True")
+      \end{lstlisting}
+      \begin{itemize}
+          \item This checks if \texttt{a} is equal to \texttt{b} AND \texttt{b} is less than \texttt{c}.
+      \end{itemize}
+  \end{frame}
+  
+\section{Control Structures}
+\begin{frame}
+    \frametitle{Control Structures}
+    \begin{itemize}
+        \item Control structures allow you to control the flow of your program.
+        \item They include:
+        \begin{itemize}
+            \item Conditional statements
+            \item Loops
+            \item Functions
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \frametitle{Conditional Statements}
+    \begin{itemize}
+        \item Conditional statements allow you to execute different blocks of code based on certain conditions.
+        \item The most common conditional statement is the \texttt{if} statement.
+        \item The \texttt{if} statement evaluates a condition and executes a block of code if the condition is \texttt{True}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{If Statement Syntax}
+    \begin{lstlisting}[style=colorful, language=Python]
+if condition:
+    # code block
+    \end{lstlisting}
+    \begin{itemize}
+        \item The \texttt{condition} is an expression that evaluates to \texttt{True} or \texttt{False}.
+        \item If the \texttt{condition} is \texttt{True}, the code block is executed.
+        \item If the \texttt{condition} is \texttt{False}, the code block is skipped.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{If Statement Example}
+    \begin{lstlisting}[style=colorful, language=Python]
+x = 10  # Assign a value to x
+if x > 5:  # Check if x is greater than 5
+    print("x is greater than 5")  # Print a message
+    \end{lstlisting}
+    \begin{itemize}
+        \item In this example, the condition \texttt{x > 5} is \texttt{True} because \texttt{x} is 10.
+        \item The code block is executed, and the message \texttt{"x is greater than 5"} is printed.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{If-Else Statement Syntax}
+    \begin{lstlisting}[style=colorful, language=Python]
+if condition:
+    # code block 1
+else:  
+    # code block 2
+    \end{lstlisting}
+    \begin{itemize}
+        \item If the \texttt{condition} is \texttt{True}, \texttt{code block 1} is executed.
+        \item If the \texttt{condition} is \texttt{False}, \texttt{code block 2} is executed.
+    \end{itemize}
+\end{frame}     
 
 
-\end{document}
+\begin{frame}[fragile]{If-Else Statement Example}
+    \begin{lstlisting}[style=colorful, language=Python]
+x = 3  # Assign a value to x
+if x > 5:  # Check if x is greater than 5
+    print("x is greater than 5")  # Print a message
+else:  # If x is not greater than 5
+    print("x is not greater than 5")  # Print a message
+    \end{lstlisting}
+    \begin{itemize}
+        \item In this example, the condition \texttt{x > 5} is \texttt{False} because \texttt{x} is 3.
+        \item The code block after the \texttt{else} statement is executed, and the message \texttt{"x is not greater than 5"} is printed.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Nested If Statements}
+    \begin{itemize}
+        \item You can nest \texttt{if} statements inside other \texttt{if} statements.
+        \item This allows you to check multiple conditions in sequence.
+        \item The inner \texttt{if} statement is only executed if the outer \texttt{if} statement's condition is \texttt{True}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Nested If Statements Example}
+    \begin{lstlisting}[style=colorful, language=Python]
+x = 10  # Assign a value to x
+if x > 5:  # Check if x is greater than 5
+    if x < 15:  # Check if x is less than 15
+        print("x is between 5 and 15")  # Print a message
+    \end{lstlisting}
+    \begin{itemize}
+        \item In this example, the condition \texttt{x > 5} is \texttt{True} because \texttt{x} is 10.
+        \item The inner \texttt{if} statement checks if \texttt{x} is less than 15, which is \texttt{True}.
+        \item The message \texttt{"x is between 5 and 15"} is printed.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{If-Elif-Else Statement Syntax}
+    \begin{lstlisting}[style=colorful, language=Python]
+if condition1:
+    # code block 1
+elif condition2:
+    # code block 2
+else:
+    # code block 3
+    \end{lstlisting}
+    \begin{itemize}
+        \item If \texttt{condition1} is \texttt{True}, \texttt{code block 1} is executed.
+        \item If \texttt{condition1} is \texttt{False} and \texttt{condition2} is \texttt{True}, \texttt{code block 2} is executed.
+        \item If both \texttt{condition1} and \texttt{condition2} are \texttt{False}, \texttt{code block 3} is executed.
+    \end{itemize}
+\end{frame} 
+
+
+\begin{frame}
+    \frametitle{Loops}
+    \begin{itemize}
+        \item Loops allow you to repeat a block of code multiple times.
+        \item The two most common types of loops are:
+        \begin{itemize}
+            \item \texttt{for} loops
+            \item \texttt{while} loops
+        \end{itemize}
+    \end{itemize}           
+\end{frame}
+
+\begin{frame}[fragile]{For Loop Syntax}
+    \begin{lstlisting}[style=colorful, language=Python]
+for item in iterable:
+    # code block
+    \end{lstlisting}
+    \begin{itemize}
+        \item The \texttt{for} loop iterates over each \texttt{item} in the \texttt{iterable}.
+        \item The \texttt{code block} is executed once for each \texttt{item} in the \texttt{iterable}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{For Loop Example}
+    \begin{lstlisting}[style=colorful, language=Python]
+for i in range(5):
+    print(i)
+    \end{lstlisting}
+    \begin{itemize}
+        \item In this example, the \texttt{range(5)} function generates a sequence of numbers from 0 to 4.
+        \item The \texttt{for} loop iterates over each number in the sequence and prints it.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{While Loop Syntax}
+    \begin{lstlisting}[style=colorful, language=Python]
+while condition:
+    # code block
+    \end{lstlisting}
+    \begin{itemize}
+        \item The \texttt{while} loop executes the \texttt{code block} as long as the \texttt{condition} is \texttt{True}.
+        \item The \texttt{condition} is evaluated before each iteration of the loop.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{While Loop Example}
+    \begin{lstlisting}[style=colorful, language=Python]
+i = 0
+while i < 5:
+    print(i)
+    i += 1
+    \end{lstlisting}
+    \begin{itemize}
+        \item In this example, the \texttt{while} loop prints the value of \texttt{i} as long as \texttt{i} is less than 5.
+        \item The value of \texttt{i} is incremented by 1 in each iteration.
+    \end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+  \end{document}

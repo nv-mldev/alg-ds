@@ -1,0 +1,7 @@
+jupyter
+numpy
+matplotlib
+pandas
+scipy   # This is a comment
+scikit-learn
+seaborn
