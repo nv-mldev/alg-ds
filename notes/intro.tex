@@ -245,7 +245,28 @@ math.sqrt(16)
         \end{figure}
     \end{columns}
 \end{frame}
-
+\begin{frame}{Python Operator Precedence}
+    \begin{itemize}
+        \item Python evaluates expressions based on operator precedence.
+        \item Common operators in order of precedence (from highest to lowest):
+        \begin{itemize}
+            \item \texttt{()} - Parentheses
+            \item \texttt{**} - Exponentiation
+            \item \texttt{+x}, \texttt{-x}, \texttt{\textasciitilde{}x} - Unary plus, Unary minus, Bitwise NOT
+            \item \texttt{*}, \texttt{/}, \texttt{//}, \texttt{\%} - Multiplication, Division, Floor division, Modulus
+            \item \texttt{+}, \texttt{-} - Addition, Subtraction
+            \item \texttt{<<}, \texttt{>>} - Bitwise shift operators
+            \item \texttt{\&} - Bitwise AND
+            \item \texttt{\textasciicircum} - Bitwise XOR
+            \item \texttt{|} - Bitwise OR
+            \item \texttt{==}, \texttt{!=}, \texttt{>}, \texttt{<}, \texttt{>=}, \texttt{<=}, \texttt{is}, \texttt{is not}, \texttt{in}, \texttt{not in} - Comparisons, Identity, Membership
+            \item \texttt{not} - Logical NOT
+            \item \texttt{and} - Logical AND
+            \item \texttt{or} - Logical OR
+        \end{itemize}
+        \item Example: \texttt{1 + 2 * 3 == 7} evaluates as \texttt{1 + (2 * 3) == 7}, which is \texttt{1 + 6 == 7}, resulting in \texttt{True}.
+    \end{itemize}
+\end{frame}
 \begin{frame}[fragile]{Overloaded Operators}
     \begin{itemize}
         \item Some operators are not limited to arithmetic operations with numbers.
@@ -308,6 +329,123 @@ hello
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Reserved Keywords}
+\begin{frame}[fragile]{Reserved Keywords}
+    \begin{lstlisting}{Python}
+     >>> import keyword
+     >>> keyword.kwlist      
+    \end{lstlisting}
+\end{frame} 
+
+\begin{frame}
+    \frametitle{Comparison Operators}
+    \begin{itemize}
+        \item Comparison operators are used to compare two values
+        \item They return a boolean value (True or False)
+        \item Common comparison operators include:
+        \begin{itemize}
+            \item \texttt{==} (equal to)
+            \item \texttt{!=} (not equal to)
+            \item \texttt{>} (greater than)
+            \item \texttt{<} (less than)
+            \item \texttt{>=} (greater than or equal to)
+            \item \texttt{<=} (less than or equal to)
+        \end{itemize}
+    \end{itemize}
 \end{frame}
+
+
+\begin{frame}[fragile]{Python Quiz-1}
+\begin{lstlisting}{Python}
+>>> 5 == 5.0000
+>>> 1+2 == 3 
+>>> 9 > 8.999999999999999
+>>> 6 // 3 == 6.0 / 3.0
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Floating-Point Comparisons}
+    \begin{itemize}
+        \item Floating-point numbers can have precision issues due to their representation in memory.
+        \item Comparisons involving equality can be affected by these precision issues.
+        \item Example: \texttt{1.1 + 2.2 == 3.3} evaluates to \texttt{False} due to tiny inaccuracies.
+        \item However, comparisons involving inequality are less likely to be affected.
+        \item Example: \texttt{9 > 8.999999999999999} evaluates to \texttt{True}.
+    \end{itemize}
+    \begin{lstlisting}{python}
+>>> 1.1 + 2.2 == 3.3
+False
+>>> 9 > 8.999999999999999
+True
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Python Quiz-2}
+    \begin{lstlisting}{Python}
+>>> 5 != 5.0000
+>>> True != False
+>>> False < True
+>>> "10" > "2"
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{String Comparison}
+    \begin{itemize}
+        \item When comparing two strings, Python compares the "Unicode code point" of the first character of each string.
+        \item If the first characters are the same, it compares the second characters, and so on, until one of the strings ends
+    \end{itemize}
+    \begin{lstlisting}{python}
+>>> "10" > "2"
+False
+>>> ord("1")
+49
+>>> ord("2")
+50
+    \end{lstlisting}
+    \begin{itemize}
+        \item This explains why files on your computer might be sorted in this order:
+        \begin{itemize}
+            \item \texttt{"Picture1.jpg"}
+            \item \texttt{"Picture10.jpg"}
+            \item \texttt{"Picture100.jpg"}
+            \item \texttt{"Picture11.jpg"}
+            \item \texttt{"Picture2.jpg"}
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Naming Your Robot}
+    \begin{itemize}
+        \item Use \texttt{input()} to read the robot's name from the user.
+        \item Assign the name to a variable called \texttt{name}.
+        \item Assign an identifier to the robot, e.g., \texttt{identifier = 1000}.
+        \item Print a message from the robot using \texttt{print()}.
+    \end{itemize}
+    \begin{lstlisting}{Python}
+>>> name = input("Enter the robot's name: ")
+>>> identifier = 1000
+>>> print(f"Hello. My name is {name}. My ID is {identifier}.")
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Converting 2D Index to 1D Index}
+    \begin{itemize}
+        \item User provides the number of rows \(R\), number of columns \(C\), and a 2D index \((r, c)\)
+        \item Convert the 2D index \((r, c)\) to a 1D index \(s\) using row-major ordering.
+    \end{itemize}
+    \begin{lstlisting}{python}
+# Get user input
+R = int(input("Enter the number of rows: "))
+C = int(input("Enter the number of columns: "))
+r = int(input("Enter the row index: "))
+c = int(input("Enter the column index: "))
+s = r*R + c
+# Print the result
+print(f"The 1D index is: {s}")
+    \end{lstlisting}
+\end{frame}
+
+
+
 \end{document}
