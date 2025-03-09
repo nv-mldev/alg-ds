@@ -6,6 +6,7 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{tikz}
+\usepackage{tcolorbox}
 % Define custom colors
 \definecolor{background}{RGB}{240,240,240}  % Light gray
 \definecolor{keyword}{RGB}{0,102,204}       % Blue
@@ -26,13 +27,12 @@
     frame=single,
     framerule=2pt,
     rulecolor=\color{keyword},
-    numbers=left,
     numbersep=8pt,
     numberstyle=\color{number},
     showstringspaces=false,
-    tabsize=4
+    tabsize=4,
+    language=Python
 }
-
 \title{Introduction to Python, Data Structures and Algorithms}
 \author{Nithin Vadekkapat}
 \date{\today}
@@ -49,12 +49,13 @@
 \end{frame}
 
 
-% \input{sections/introduction.tex}
-% \input{sections/atomic-data.tex}
-% \input{sections/collection-data.tex}
-%\input{sections/input-output.tex}
-%\input{sections/control-structures.tex}
-%\input{sections/exception.tex}
+\input{sections/introduction.tex}
+\input{sections/atomic-data.tex}
+\input{sections/collection-data.tex}
+\input{sections/input-output.tex}
+\input{sections/control-structures.tex}
+\input{sections/exception.tex}
 \input{sections/functions.tex}
+\input{sections/exercise.tex}
 
 \end{document}

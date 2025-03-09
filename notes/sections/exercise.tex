@@ -28,3 +28,32 @@ s = r*R + c
 print(f"The 1D index is: {s}")
     \end{lstlisting}
 \end{frame}
+
+\begin{frame}[fragile]{Infinite Monkey Theorem}
+\begin{lstlisting}[style=colorful, language=Python]
+import string 
+import random 
+char_dictionary = string.ascii_lowercase+' '
+target = 'hello world'
+def genrate_random_string(length):
+    random_string = ''
+    for i in range(length):
+        random_string += random.choice(char_dictionary)
+    return random_string
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Infinite Monkey Theorem}
+\begin{lstlisting}[style=colorful, language=Python]
+def infinite_monkey(target):
+    target_length = len(target)
+    iteration = 0
+    while True:
+        random_string = genrate_random_string(target_length)
+        iteration += 1
+        print(iteration)
+        if random_string == target:
+            return iteration
+attempts = infinite_monkey(target)
+\end{lstlisting}
+\end{frame}

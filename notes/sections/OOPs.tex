@@ -1,0 +1,80 @@
+\section{Obejct Oriented Programming}
+\label{sec:OOPs}
+
+\begin{frame}
+    \frametitle{Object Oriented Programming}
+    \begin{itemize}
+        \item \textbf{Object:} An object is a real-world entity that has a state and behavior.
+        \item \textbf{Class:} A class is a blueprint for creating objects.
+        \item \textbf{Encapsulation:} Encapsulation is the bundling of data and methods that operate on the data.
+        \item \textbf{Abstraction:} Abstraction is the process of hiding the implementation details and showing only the functionality.
+        \item \textbf{Inheritance:} Inheritance is the mechanism of creating a new class from an existing class.
+        \item \textbf{Polymorphism:} Polymorphism is the ability of an object to take on many forms.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{class syntax}
+    \begin{itemize}
+        \item A class is defined using the \texttt{class} keyword.
+        \item The class definition consists of a class name and a code block.
+        \item The code block contains class attributes and methods.
+        \item The class attributes are variables that store data.
+        \item The class methods are
+            \begin{itemize}
+                \item Functions that perform operations on the data.
+                \item Defined using the \texttt{def} keyword.
+                \item The first parameter of a method is \texttt{self}.
+            \end{itemize}
+    \end{itemize}       
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Creating a Class}
+    \begin{lstlisting}[style=colorful, language=Python]
+class Robot:
+    def __init__(self, name, identifier):
+        self.name = name
+        self.identifier = identifier
+    def say_hello(self):
+        print(f"Hello. My name is {self.name}. My ID is {self.identifier}.")
+    \end{lstlisting}
+\end{frame} 
+
+\begin{frame}
+\frametitle{Defaulf Constructor}
+\begin{itemize}
+    \item The \texttt{\_\_init\_\_()} method is a special method called a constructor.
+    \item It is called when an object is created.
+    \item The \texttt{self} parameter refers to the object itself.
+    \item The \texttt{self} parameter is used to access the object's attributes and methods.
+    \item The \texttt{self} parameter is passed implicitly when calling a method.
+\end{itemize}       
+\end{frame}
+
+\begin{frame}
+    \frametitle{Default methods}
+    \begin{itemize}
+        \item The \texttt{\_\_str\_\_()} method is a special method that returns a string representation of an object.
+        \item The \texttt{\_\_str\_\_()} method is called when an object is printed.
+        \item The \texttt{\_\_repr\_\_()} method is a special method that returns a string representation of an object.
+        \item The \texttt{\_\_repr\_\_()} method is called when an object is printed in the interactive shell.
+    \end{itemize}   
+\end{frame}
+
+\begin{frame}
+\frametitle{Example of Default methods}
+\begin{lstlisting}[style=colorful, language=Python]
+class Robot:
+    def __init__(self, name, identifier):
+        self.name = name
+        self.identifier = identifier
+    def say_hello(self):
+        print(f"Hello. My name is {self.name}. My ID is {self.identifier}.")
+    def __str__(self):
+        return f"Robot({self.name}, {self.identifier})"
+    def __repr__(self):
+        return f"Robot({self.name}, {self.identifier})"
+    
+\end{lstlisting}
+\end{frame}
