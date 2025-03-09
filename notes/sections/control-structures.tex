@@ -1,0 +1,231 @@
+
+\section{Control Structures}
+\begin{frame}
+    \frametitle{Control Structures}
+    \begin{itemize}
+        \item Control structures allow you to control the flow of your program.
+        \item They include:
+        \begin{itemize}
+            \item Conditional statements
+            \item Loops
+            \item Functions
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \frametitle{Conditional Statements}
+    \begin{itemize}
+        \item Conditional statements allow you to execute different blocks of code based on certain conditions.
+        \item The most common conditional statement is the \texttt{if} statement.
+        \item The \texttt{if} statement evaluates a condition and executes a block of code if the condition is \texttt{True}.
+    \end{itemize}
+\end{frame}
+\subsection{If Statements}
+\begin{frame}[fragile]{If Statement Syntax}
+    \begin{lstlisting}[style=colorful, language=Python]
+if condition:
+    # code block
+    \end{lstlisting}
+    \begin{itemize}
+        \item The \texttt{condition} is an expression that evaluates to \texttt{True} or \texttt{False}.
+        \item If the \texttt{condition} is \texttt{True}, the code block is executed.
+        \item If the \texttt{condition} is \texttt{False}, the code block is skipped.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{If Statement Example}
+    \begin{lstlisting}[style=colorful, language=Python]
+x = 10  # Assign a value to x
+if x > 5:  # Check if x is greater than 5
+    print("x is greater than 5")  # Print a message
+    \end{lstlisting}
+    \begin{itemize}
+        \item In this example, the condition \texttt{x > 5} is \texttt{True} because \texttt{x} is 10.
+        \item The code block is executed, and the message \texttt{"x is greater than 5"} is printed.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{If-Else Statement Syntax}
+    \begin{lstlisting}[style=colorful, language=Python]
+if condition:
+    # code block 1
+else:  
+    # code block 2
+    \end{lstlisting}
+    \begin{itemize}
+        \item If the \texttt{condition} is \texttt{True}, \texttt{code block 1} is executed.
+        \item If the \texttt{condition} is \texttt{False}, \texttt{code block 2} is executed.
+    \end{itemize}
+\end{frame}     
+
+
+\begin{frame}[fragile]{If-Else Statement Example}
+    \begin{lstlisting}[style=colorful, language=Python]
+x = 3  # Assign a value to x
+if x > 5:  # Check if x is greater than 5
+    print("x is greater than 5")  # Print a message
+else:  # If x is not greater than 5
+    print("x is not greater than 5")  # Print a message
+    \end{lstlisting}
+    \begin{itemize}
+        \item In this example, the condition \texttt{x > 5} is \texttt{False} because \texttt{x} is 3.
+        \item The code block after the \texttt{else} statement is executed, and the message \texttt{"x is not greater than 5"} is printed.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Nested If Statements}
+    \begin{itemize}
+        \item You can nest \texttt{if} statements inside other \texttt{if} statements.
+        \item This allows you to check multiple conditions in sequence.
+        \item The inner \texttt{if} statement is only executed if the outer \texttt{if} statement's condition is \texttt{True}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Nested If Statements Example}
+    \begin{lstlisting}[style=colorful, language=Python]
+x = 10  # Assign a value to x
+if x > 5:  # Check if x is greater than 5
+    if x < 15:  # Check if x is less than 15
+        print("x is between 5 and 15")  # Print a message
+    \end{lstlisting}
+    \begin{itemize}
+        \item In this example, the condition \texttt{x > 5} is \texttt{True} because \texttt{x} is 10.
+        \item The inner \texttt{if} statement checks if \texttt{x} is less than 15, which is \texttt{True}.
+        \item The message \texttt{"x is between 5 and 15"} is printed.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{If-Elif-Else Statement Syntax}
+    \begin{lstlisting}[style=colorful, language=Python]
+if condition1:
+    # code block 1
+elif condition2:
+    # code block 2
+else:
+    # code block 3
+    \end{lstlisting}
+    \begin{itemize}
+        \item If \texttt{condition1} is \texttt{True}, \texttt{code block 1} is executed.
+        \item If \texttt{condition1} is \texttt{False} and \texttt{condition2} is \texttt{True}, \texttt{code block 2} is executed.
+        \item If both \texttt{condition1} and \texttt{condition2} are \texttt{False}, \texttt{code block 3} is executed.
+    \end{itemize}
+\end{frame} 
+
+
+\begin{frame}
+    \frametitle{Loops}
+    \begin{itemize}
+        \item Loops allow you to repeat a block of code multiple times.
+        \item The two most common types of loops are:
+        \begin{itemize}
+            \item \texttt{for} loops
+            \item \texttt{while} loops
+        \end{itemize}
+    \end{itemize}           
+\end{frame}
+\subsection{For Loops}
+\begin{frame}[fragile]{For Loop Syntax}
+    \begin{lstlisting}[style=colorful, language=Python]
+for item in iterable:
+    # code block
+    \end{lstlisting}
+    \begin{itemize}
+        \item The \texttt{for} loop iterates over each \texttt{item} in the \texttt{iterable}.
+        \item The \texttt{code block} is executed once for each \texttt{item} in the \texttt{iterable}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{For Loop Example}
+    \begin{lstlisting}[style=colorful, language=Python]
+for i in range(5):
+    print(i)
+    \end{lstlisting}
+    \begin{itemize}
+        \item In this example, the \texttt{range(5)} function generates a sequence of numbers from 0 to 4.
+        \item The \texttt{for} loop iterates over each number in the sequence and prints it.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{For Loop Example (2)}
+    \begin{lstlisting}[style=colorful, language=Python]
+>>> fruits = ["apple", "banana", "cherry"]
+>>> for fruit in fruits:
+>>>    print(fruit)
+apple
+banana
+cherry
+    \end{lstlisting}
+    \begin{itemize}
+        \item In this example, the \texttt{for} loop iterates over each \texttt{fruit} in the \texttt{fruits} list.
+        \item The \texttt{code block} prints each \texttt{fruit} in the list.
+    \end{itemize}
+\end{frame}
+
+\subsection{While Loops}
+\begin{frame}[fragile]
+    \frametitle{While Loop Syntax}
+    \begin{lstlisting}[style=colorful, language=Python]
+while condition:
+    # code block
+    \end{lstlisting}
+    \begin{itemize}
+        \item The \texttt{while} loop executes the \texttt{code block} as long as the \texttt{condition} is \texttt{True}.
+        \item The \texttt{condition} is evaluated before each iteration of the loop.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{While Loop Example}
+    \begin{lstlisting}[style=colorful, language=Python]
+i = 0
+while i < 5:
+    print(i)
+    i += 1
+    \end{lstlisting}
+    \begin{itemize}
+        \item In this example, the \texttt{while} loop prints the value of \texttt{i} as long as \texttt{i} is less than 5.
+        \item The value of \texttt{i} is incremented by 1 in each iteration.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{List Comprehensions}
+    \begin{itemize}
+        \item List comprehensions are a concise way to create lists in Python.
+        \item They allow you to generate a new list by applying an expression to each item in an existing list.
+        \item List comprehensions are more readable and efficient than traditional \texttt{for} loops.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{List Comprehension Syntax}
+    \begin{itemize}
+        \item The basic syntax of a list comprehension is:
+        \begin{center}
+            \texttt{[expression for item in iterable]}
+        \end{center}
+        \item The \texttt{expression} is applied to each \texttt{item} in the \texttt{iterable} to generate a new list.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{List Comprehension Example (1)}
+    \begin{lstlisting}[style=colorful, language=Python]
+>>> sq_list = []
+>>> for x in range(1, 11):
+sq_list.append(x * x)
+>>> sq_list
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+>>> sq_list = [x * x for x in range(1, 11)]
+>>> sq_list
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{List Comprehension Example (2)}
+    \begin{lstlisting}[style=colorful, language=Python]
+>>> even_sq_list = [x * x for x in range(1, 11) if x % 2 == 0]
+>>> even_sq_list
+[4, 16, 36, 64, 100]
+>>>[ch.upper() for ch in 'comprehension' if ch not in 'aeiou']
+    \end{lstlisting}
+\end{frame}
+

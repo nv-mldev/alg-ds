@@ -1,0 +1,30 @@
+\begin{frame}[fragile]{Naming Your Robot}
+    \begin{itemize}
+        \item Use \texttt{input()} to read the robot's name from the user.
+        \item Assign the name to a variable called \texttt{name}.
+        \item Assign an identifier to the robot, e.g., \texttt{identifier = 1000}.
+        \item Print a message from the robot using \texttt{print()}.
+    \end{itemize}
+    \begin{lstlisting}[style=colorful, language=Python]
+>>> name = input("Enter the robot's name: ")
+>>> identifier = 1000
+>>> print(f"Hello. My name is {name}. My ID is {identifier}.")
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Converting 2D Index to 1D Index}
+    \begin{itemize}
+        \item User provides the number of rows \(R\), number of columns \(C\), and a 2D index \((r, c)\)
+        \item Convert the 2D index \((r, c)\) to a 1D index \(s\) using row-major ordering.
+    \end{itemize}
+    \begin{lstlisting}[style=colorful, language=Python]
+# Get user input
+R = int(input("Enter the number of rows: "))
+C = int(input("Enter the number of columns: "))
+r = int(input("Enter the row index: "))
+c = int(input("Enter the column index: "))
+s = r*R + c
+# Print the result
+print(f"The 1D index is: {s}")
+    \end{lstlisting}
+\end{frame}

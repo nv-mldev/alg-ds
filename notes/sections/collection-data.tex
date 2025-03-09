@@ -1,0 +1,555 @@
+\section{Collection Data Types}
+\begin{frame}
+    \frametitle{Builtin Collection Data Types}
+    \begin{itemize}
+        \item Python provides several collection data types
+        \item These types are used to store multiple values in a single variable
+        \item Common collection data types include:
+        \begin{itemize}
+            \item Lists
+            \item Tuples
+            \item Sets
+            \item Dictionaries
+        \end{itemize}
+    \end{itemize}   
+\end{frame}
+
+\begin{frame}
+    \frametitle{Lists}
+    \begin{itemize}
+        \item Lists are ordered collections of items
+        \item Lists can contain items of different types
+        \item Lists are mutable, meaning they can be changed after creation
+        \item Lists are created using square brackets \texttt{[]}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Creating Lists}
+    \begin{lstlisting}[style=colorful, language=Python]
+# Create an empty list
+my_list = []
+# Create a list with items
+my_list = [1, 2, 3, 4, 5]  
+my_another_list = ['a', 'b', 'c', False, 3, 0.11]  
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Accessing List Items}
+    \begin{lstlisting}[style=colorful, language=Python]
+# Access the first item in the list
+print(my_list[0])
+# Access the last item in the list
+print(my_list[-1])
+    \end{lstlisting}
+\end{frame} 
+
+\begin{frame}[fragile]{Slicing Lists}
+    \begin{lstlisting}[style=colorful, language=Python]
+# Get the first three items in the list
+print(my_list[:3])
+# Get the last three items in the list
+print(my_list[-3:])
+    \end{lstlisting}
+\end{frame}             
+
+
+\begin{frame}[fragile]{Adding Items to a List}
+    \begin{lstlisting}[style=colorful, language=Python]
+# Append an item to the end of the list
+my_list.append(6)
+# Insert an item at a specific index
+my_list.insert(0, 0)
+    \end{lstlisting}
+\end{frame}     
+
+
+\begin{frame}[fragile]{List Operations}
+    \begin{lstlisting}[style=colorful, language=Python]
+# Concatenate two lists
+new_list = my_list + [7, 8, 9]
+# Repeat a list
+repeated_list = my_list * 2
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Mutability of Lists in Python}
+    \begin{itemize}
+        \item Lists in Python are mutable, meaning their contents can be changed after creation.
+        \item Example: Modifying a list through a reference.
+    \end{itemize}
+    \begin{lstlisting}[style=colorful, language=Python]
+# Create a list
+a = [1]
+# Assign the list to another variable
+b = a
+# Modify the list through the original variable
+a[0] = 5
+# Print the modified list through the reference
+print(b)  # Output: [5]
+    \end{lstlisting}
+    \begin{itemize}
+        \item Both \texttt{a} and \texttt{b} refer to the same list object.
+        \item Modifying the list through \texttt{a} also affects \texttt{b}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{List References in Python}
+    \begin{lstlisting}[style=colorful, language=Python]
+        # Create a list
+        my_list = [1, 2, 3, 4]
+        # Create a list of references to the original list
+        A = [my_list] * 3
+        print(A)  # Output: [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]
+        # Modify the original list
+        my_list[2] = 45
+        print(A)  # Output: [[1, 2, 45, 4], [1, 2, 45, 4], [1, 2, 45, 4]]
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}{List Methods in Python (Part 1)}
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|l|l|p{4cm}|}
+            \hline
+            \textbf{Method Name} & \textbf{Use} & \textbf{Explanation} \\ \hline
+            \texttt{append} & \texttt{a\_list.append(item)} & Adds a new item to the end of a list \\ \hline
+            \texttt{insert} & \texttt{a\_list.insert(i, item)} & Inserts an item at the \texttt{i}th position in a list \\ \hline
+            \texttt{pop} & \texttt{a\_list.pop()} & Removes and returns the last item in a list \\ \hline
+            \texttt{pop} & \texttt{a\_list.pop(i)} & Removes and returns the \texttt{i}th item in a list \\ \hline
+            \texttt{sort} & \texttt{a\_list.sort()} & Modifies a list to be sorted \\ \hline
+        \end{tabular}
+        \caption{List Methods in Python (Part 1)}
+    \end{table}
+\end{frame}
+
+\begin{frame}{List Methods in Python (Part 2)}
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|l|l|p{4cm}|}
+            \hline
+            \textbf{Method Name} & \textbf{Use} & \textbf{Explanation} \\ \hline
+            \texttt{reverse} & \texttt{a\_list.reverse()} & Modifies a list to be in reverse order \\ \hline
+            \texttt{del} & \texttt{del a\_list[i]} & Deletes the item in the \texttt{i}th position \\ \hline
+            \texttt{index} & \texttt{a\_list.index(item)} & Returns the index of the first occurrence of item \\ \hline
+            \texttt{count} & \texttt{a\_list.count(item)} & Returns the number of occurrences of item \\ \hline
+            \texttt{remove} & \texttt{a\_list.remove(item)} & Removes the first occurrence of item \\ \hline
+        \end{tabular}
+        \caption{List Methods in Python (Part 2)}
+    \end{table}
+\end{frame}
+
+\begin{frame}[fragile]{The \texttt{range} Function in Python}
+    \begin{itemize}
+        \item The \texttt{range} function produces a range object that represents a sequence of values.
+        \item Using the \texttt{list} function, you can convert the range object to a list to see its values.
+    \end{itemize}
+    \begin{lstlisting}[style=colorful, language=Python]
+>>> range(10)
+range(0, 10)
+>>> list(range(10))
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> range(5, 10)
+range(5, 10)
+>>> list(range(5, 10))
+[5, 6, 7, 8, 9]
+>>> list(range(5, 10, 2))
+[5, 7, 9]
+>>> list(range(10, 1, -1))
+[10, 9, 8, 7, 6, 5, 4, 3, 2]
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}{Strings}
+    \begin{itemize}
+        \item Strings are sequences of characters
+        \item Strings are immutable, meaning they cannot be changed after creation
+        \item Strings are created using single quotes \texttt{'} or double quotes \texttt{''}
+    \end{itemize}
+\end{frame}     
+
+\begin{frame}{String Methods in Python (Part 1)}
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|l|l|p{5cm}|}
+            \hline
+            \textbf{Method} & \textbf{Use} & \textbf{Explanation} \\ \hline
+            \texttt{center} & \texttt{a\_string.center(w)} & Returns a string centered in a field of size \texttt{w} \\ \hline
+            \texttt{count} & \texttt{a\_string.count(item)} & Returns the number of occurrences of \texttt{item} in the string \\ \hline
+            \texttt{ljust} & \texttt{a\_string.ljust(w)} & Returns a string left-justified in a field of size \texttt{w} \\ \hline
+            \texttt{lower} & \texttt{a\_string.lower()} & Returns a string in all lowercase \\ \hline
+        \end{tabular}
+        \caption{String Methods in Python (Part 1)}
+    \end{table}
+\end{frame}
+
+\begin{frame}{String Methods in Python (Part 2)}
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|l|l|p{5cm}|}
+            \hline
+            \textbf{Method} & \textbf{Use} & \textbf{Explanation} \\ \hline
+            \texttt{rjust} & \texttt{a\_string.rjust(w)} & Returns a string right-justified in a field of size \texttt{w} \\ \hline
+            \texttt{find} & \texttt{a\_string.find(item)} & Returns the index of the first occurrence of \texttt{item} \\ \hline
+            \texttt{split} & \texttt{a\_string.split(s\_char)} & Splits a string into substrings at \texttt{s\_char} \\ \hline
+        \end{tabular}
+        \caption{String Methods in Python (Part 2)}
+    \end{table}
+\end{frame}
+
+\begin{frame}[fragile]{Sting methods}
+    \begin{lstlisting}[style=colorful, language=Python]
+ >>> "David"
+'David'
+>>> my_name = "David"
+>>> my_name[3]
+'i'
+>>> my_name*2
+'DavidDavid'
+>>> len(my_name)
+5
+>>> my_name.upper()
+'DAVID'
+>>> my_name.lower()
+'david'
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Sting methods}
+    \begin{lstlisting}[style=colorful, language=Python]
+>>> my_name = "David"
+>>> my_name.center(10)
+'  David   '
+>>> my_name.find('v')
+2
+>>> my_name.replace('D', 'J')
+'Javid'
+>>> my_name.split('v')
+['Da', 'id']    
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Mutability of Lists}
+    \begin{itemize}
+        \item Lists in Python are mutable, meaning their contents can be changed after creation.
+        \item Example:
+    \end{itemize}
+    \begin{lstlisting}[style=colorful, language=Python]
+my_list = [1, 3, True, 6.5]
+my_list[0] = 2**10
+print(my_list)  # Output: [1024, 3, True, 6.5]
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Immutability of Strings}
+    \begin{itemize}
+        \item Strings in Python are immutable, meaning their contents cannot be changed after creation.
+        \item Example:
+    \end{itemize}
+    \begin{lstlisting}[style=colorful, language=Python]
+>>> my_name = 'David'
+>>> my_name[0]='X'
+Traceback (most recent call last):
+File "<pyshell#84>", line 1, in <module>
+my_name[0]='X'
+TypeError: 'str' object does not support item assignment
+>>>
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}{Tuples}
+    \begin{itemize}
+        \item Tuples are ordered collections of items
+        \item Tuples can contain items of different types
+        \item Tuples are immutable, meaning they cannot be changed after creation
+        \item Tuples are created using parentheses \texttt{()}
+    \end{itemize}
+\end{frame} 
+
+\begin{frame}[fragile]{Creating Tuples}
+    \begin{lstlisting}[style=colorful, language=Python]
+# Create an empty tuple
+my_tuple = ()
+# Create a tuple with items
+my_tuple = (1, 2, 3, 4, 5)
+my_another_tuple = ('a', 'b', 'c', False, 3, 0.11)
+    \end{lstlisting}        
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[style=colorful, language=Python]
+>>> my_tuple = (2,True,4.96)
+>>> my_tuple
+(2, True, 4.96)
+>>> len(my_tuple)
+3
+>>> my_tuple[0]
+2
+>>> my_tuple * 3
+(2, True, 4.96, 2, True, 4.96, 2, True, 4.96)
+>>> my_tuple[0:2]
+(2, True)
+ >>>  
+    \end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]{Tuple Multiplication Differences}
+    \begin{itemize}
+      \item \textbf{Key Concept:} The comma in tuple creation is crucial.
+      \item Without a comma, parentheses are treated as grouping operators.
+    \end{itemize}
+    \begin{lstlisting}[style=colorful, language=Python]
+    >> my_tuple = (2)
+    >> type(my_tuple)
+    <class 'int'>
+    >> my_tuple = (2,)
+    >> type(my_tuple)
+    <class 'tuple'>
+    >> my_tuple = (1,2,3)
+    >> my_tuple*2
+    (1, 2, 3, 1, 2, 3)
+    >> (my_tuple)*2
+    (1, 2, 3, 1, 2, 3)
+    >> (my_tuple,)*2
+    ((1, 2, 3), (1, 2, 3))
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Sets}
+    \begin{itemize}
+        \item Sets are unordered collections of unique items
+        \item Sets do not allow duplicate items
+        \item Sets are mutable, meaning they can be changed after creation
+        \item Sets are created using curly braces \texttt{\{\}}
+    \end{itemize}   
+\end{frame}
+
+\begin{frame}{Set Methods in Python (Part 1)}
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|l|l|p{3.8cm}|}
+            \hline
+            \textbf{Method} & \textbf{Use} & \textbf{Explanation} \\ \hline
+            \texttt{union} & \texttt{set1.union(set2)} & Returns a new set with all elements from both sets \\ \hline
+            \texttt{intersection} & \texttt{set1.intersection(set2)} & Returns a new set with only the elements common to both sets \\ \hline
+            \texttt{difference} & \texttt{set1.difference(set2)} & Returns a new set with all items from the first set not in the second \\ \hline
+            \texttt{issubset} & \texttt{set1.issubset(set2)} & Asks whether all elements of one set are in the other \\ \hline
+        \end{tabular}
+        \caption{Set Methods in Python (Part 1)}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Set Methods in Python (Part 2)}
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|l|l|p{5cm}|}
+            \hline
+            \textbf{Method} & \textbf{Use} & \textbf{Explanation} \\ \hline
+            \texttt{add} & \texttt{set.add(item)} & Adds item to the set \\ \hline
+            \texttt{remove} & \texttt{set.remove(item)} & Removes item from the set \\ \hline
+            \texttt{pop} & \texttt{set.pop()} & Removes an arbitrary element from the set \\ \hline
+            \texttt{clear} & \texttt{set.clear()} & Removes all elements from the set \\ \hline
+        \end{tabular}
+        \caption{Set Methods in Python (Part 2)}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Mutability of Sets in Python}
+    \begin{itemize}
+      \item \textbf{Sets themselves are mutable.}
+        \begin{itemize}
+          \item Elements can be added using \texttt{add()}.
+          \item Elements can be removed using \texttt{remove()} or \texttt{discard()}.
+          \item Sets can be updated with \texttt{update()} or \texttt{union()}.
+        \end{itemize}
+      \item \textbf{Elements within a set must be immutable.}
+        \begin{itemize}
+          \item This means you can't directly put lists or dictionaries in a set.
+          \item You can use immutable types like integers, strings, and tuples.
+        \end{itemize}
+      \item \textbf{Why the Confusion?}
+        \begin{itemize}
+          \item Some sources may loosely use "immutable" due to the element restriction.
+          \item Set implementation relies on hash values, which mutable elements would disrupt.
+          \item Integers, floats, strings, and tuples are hashable or immutable.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Creating Sets}
+        \begin{lstlisting}[style=colorful, language=Python]
+# Create an empty set
+my_set = set()
+# Create a set with items
+my_set = {1, 2, 3, 4, 5}
+my_another_set = {'a', 'b', 'c', False, 3, 0.11}
+        \end{lstlisting}            
+    \end{frame}
+
+\begin{frame}[fragile]{Set Operations}
+    \begin{lstlisting}[style=colorful, language=Python]
+# Create two sets
+>>> set1 = {1, 2, 3, 4, 5}  
+>>> set2 = {4, 5, 6, 7, 8}
+# Union of two sets
+>>> union_set = set1.union(set2)
+>>> print(union_set)
+{1, 2, 3, 4, 5, 6, 7, 8} 
+# Difference of two sets
+>>> difference_set = set1.difference(set2)
+>>> print(difference_set)
+{1, 2, 3}
+# Intersection of two sets
+>>> intersection_set = set1.intersection(set2)
+>>> print(intersection_set)
+{4, 5}
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Dictionaries}
+    \begin{itemize}
+        \item Dictionaries are unordered collections of key-value pairs before Python 3.7
+        \item Dictionaries are ordered collections of key-value pairs in Python 3.7 and later
+        \item Dictionaries can contain items of different types
+        \item Dictionaries are mutable, meaning they can be changed after creation
+        \item Dictionaries are created using curly braces \texttt{\{\}}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Creating Dictionaries}
+    \begin{lstlisting}[style=colorful, language=Python]
+# Create an empty dictionary
+my_dict = {}
+# Create a dictionary with items
+my_dict = {'name': 'David', 'age': 32}
+my_another_dict = {'name': 'Alice', 'age': 28, 'is_student': True}
+    \end{lstlisting}
+\end{frame} 
+
+\begin{frame}
+\frametitle{Dictionary Methods in Python (Part 1)}
+\begin{table}[]
+    \centering
+    \begin{tabular}{|l|l|p{5cm}|}
+        \hline
+        \textbf{Method} & \textbf{Use} & \textbf{Explanation} \\ \hline
+        \texttt{clear} & \texttt{a\_dict.clear()} & Removes all items from the dictionary \\ \hline
+        \texttt{copy} & \texttt{a\_dict.copy()} & Returns a shallow copy of the dictionary \\ \hline
+        \texttt{get} & \texttt{a\_dict.get(key,default)} & Returns the value for \texttt{key} if it exists \\ \hline
+        \texttt{items} & \texttt{a\_dict.items()} & Returns key-value pairs of all items in the dictionary \\ \hline
+        \texttt{keys} & \texttt{a\_dict.keys()} & Returns a view of all keys in the dictionary \\ \hline
+    \end{tabular}
+    \caption{Dictionary Methods in Python (Part 1)}
+\end{table} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Dictionary Methods in Python (Part 2)}
+\begin{table}[]
+    \centering
+    \begin{tabular}{|l|p{4.3cm}|p{4cm}|}
+        \hline
+        \textbf{Method} & \textbf{Use} & \textbf{Explanation} \\ \hline
+        \texttt{pop} & \texttt{a\_dict.pop(key)} & Removes the item with \texttt{key} and returns its value \\ \hline
+        \texttt{popitem} & \texttt{a\_dict.popitem()} & Removes and returns an arbitrary item from the dictionary \\ \hline
+        \texttt{setdefault} & \texttt{a\_dict.setdefault(key, default)} & Returns the value for \texttt{key} if it exists, else sets the value to \texttt{default} \\ \hline
+    \end{tabular}
+    \caption{Dictionary Methods in Python (Part 2)}
+\end{table}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Dictionary Methods in Python (Part 3)}
+\begin{table}[]
+    \centering
+    \begin{tabular}{|l|p{5cm}|p{4cm}|}
+        \hline
+        \textbf{Method} & \textbf{Use} & \textbf{Explanation} \\ \hline
+        \texttt{update} & \texttt{a\_dict.update(other\_dict)} & Updates the dictionary with items from \texttt{other\_dict} \\ \hline
+        \texttt{values} & \texttt{a\_dict.values()} & Returns a view of all values in the dictionary \\ \hline
+    \end{tabular}
+    \caption{Dictionary Methods in Python (Part 3)}
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile]{Dictionary Operations}
+    \begin{lstlisting}[style=colorful, language=Python]
+# Create two dictionaries
+>>> dict1 = {'name': 'David', 'age': 32}
+>>> dict2 = {'name': 'Alice', 'age': 28, 'is_student': True}
+# Update a dictionary
+>>> dict1.update(dict2)
+>>> print(dict1)
+{'name': 'Alice', 'age': 28, 'is_student': True}
+# Get a value from a dictionary
+>>> print(dict1.get('name'))
+Alice
+# Remove an item from a dictionary
+>>> dict1.pop('age')
+28
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Dictionary Operations}
+    \begin{lstlisting}[style=colorful, language=Python]
+# Create a dictionary
+>>> my_dict = {'name': 'David', 'age': 32}
+# Add a new item to the dictionary 
+>>> my_dict['is_student'] = True
+>>> print(my_dict)
+{'name': 'David', 'age': 32, 'is_student': True}
+# Remove an item from the dictionary
+>>> del my_dict['age']
+>>> print(my_dict)
+{'name': 'David', 'is_student': True}
+    \end{lstlisting}
+\end{frame} 
+
+\begin{frame}[fragile]{Dictionary Operations}
+    \begin{lstlisting}[style=colorful, language=Python]
+# Create a dictionary
+>>> my_dict = {'name': 'David', 'age': 32}
+# Check if a key exists in the dictionary
+>>> print('name' in my_dict)
+True
+>>> print('is_student' in my_dict)
+False
+# Get the number of items in the dictionary
+>>> print(len(my_dict))
+2
+    \end{lstlisting}
+\end{frame} 
+
+
+\begin{frame}[fragile]{String Comparison}
+    \begin{itemize}
+        \item When comparing two strings, Python compares the ``Unicode code point'' of the first character of each string.
+        \item If the first characters are the same, it compares the second characters, and so on, until one of the strings ends
+    \end{itemize}
+
+    \begin{lstlisting}[style=colorful, language=Python]
+>>> "10" > "2"
+False
+>>> ord("1")
+49
+>>> ord("2")
+50
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item This explains why files on your computer might be sorted in this order:
+        \begin{itemize}
+            \item \texttt{``Picture1.jpg''}
+            \item \texttt{``Picture10.jpg''}
+            \item \texttt{``Picture100.jpg''}
+            \item \texttt{``Picture11.jpg''}
+            \item \texttt{``Picture2.jpg''}
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+

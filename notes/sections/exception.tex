@@ -1,0 +1,250 @@
+\section{Exception Handling}
+\begin{frame}
+    \frametitle{Exception Handling}
+    \begin{itemize}
+        \item Exception handling allows you to gracefully handle errors in your program.
+        \item Exceptions are raised when an error occurs during program execution.
+        \item You can catch and handle exceptions using \texttt{try} and \texttt{except} blocks.
+    \end{itemize}
+\end{frame} 
+
+\begin{frame}
+    \frametitle{Type of errors in Python}
+    \begin{itemize}
+        \item Syntax errors
+        \item Runtime errors
+        \item Logical errors
+    \end{itemize}   
+\end{frame} 
+
+\begin{frame}[fragile]{Syntax Errors}
+    \begin{itemize}
+        \item Syntax errors occur when the code is not written correctly.
+        \item The Python interpreter cannot execute code with syntax errors.
+        \item Syntax errors are detected during the parsing phase.
+    \end{itemize}
+    \begin{lstlisting}[style=colorful, language=Python]
+# Syntax error: missing colon
+if x > 5
+    print("x is greater than 5")
+    \end{lstlisting}
+\end{frame} 
+
+\begin{frame}[fragile]{Runtime Errors}
+    \begin{itemize}
+        \item Runtime errors occur during program execution.
+        \item They are also known as exceptions.
+        \item Runtime errors can be handled using exception handling.
+    \end{itemize}
+    \begin{lstlisting}[style=colorful, language=Python]
+# Runtime error: division by zero
+x = 10 / 0
+    \end{lstlisting}
+\end{frame} 
+
+\begin{frame}[fragile]{Logical Errors}
+    \begin{itemize}
+        \item Logical errors occur when the program does not produce the expected output.
+        \item The code is syntactically correct and does not raise any exceptions.
+        \item Logical errors are the most challenging to debug.
+    \end{itemize}
+    \begin{lstlisting}[style=colorful, language=Python]
+# Logical error: incorrect calculation
+x = 10
+y = 20
+result = x + y  # Should be x * y
+    \end{lstlisting}
+\end{frame} 
+
+\begin{frame}[fragile]{Exception Handling Syntax}
+    \begin{lstlisting}[style=colorful, language=Python]
+try:            # Try block
+    # code that may raise an exception
+except Exception as e:  # Exception block
+    # code to handle the exception
+    \end{lstlisting}
+    \begin{itemize}
+        \item The \texttt{try} block contains the code that may raise an exception.
+        \item The \texttt{except} block contains the code to handle the exception.
+        \item The \texttt{except} block is executed only if an exception occurs in the \texttt{try} block.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Exception Handling Example}
+    \begin{lstlisting}[style=colorful, language=Python]
+try:
+    x = 10 / 0  # Division by zero
+except ZeroDivisionError as e:
+    print("Error:", e)
+    \end{lstlisting}
+    \begin{itemize}
+        \item In this example, the code inside the \texttt{try} block raises a \texttt{ZeroDivisionError}.
+        \item The \texttt{except} block catches the exception and prints an error message.
+    \end{itemize}
+\end{frame} 
+
+\begin{frame}[fragile]{Exception Handling Example (Part 2)}
+    \begin{lstlisting}[style=colorful, language=Python]
+>>> a_number = int(input("Please enter an integer "))
+Please enter an integer -23
+>>> print(math.sqrt(a_number))
+Traceback (most recent call last):
+File "<pyshell#102>", line 1, in <module>
+print(math.sqrt(a_number))
+ValueError: math domain error
+>>> try:
+print(math.sqrt(a_number))
+except:
+print("Bad Value for square root")
+print("Using absolute value instead")
+print(math.sqrt(abs(a_number)))
+Bad Value for square root
+Using absolute value instead
+4.795831523312719
+>>>
+ \end{lstlisting}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{Multiple Exceptions}
+    \begin{lstlisting}[style=colorful, language=Python]
+try:
+    x = 10 / 0  # Division by zero
+except ZeroDivisionError as e:
+    print("Error:", e)
+except Exception as e:
+    print("An error occurred:", e)
+    \end{lstlisting}
+    \begin{itemize}
+        \item You can catch multiple exceptions by adding multiple \texttt{except} blocks.
+        \item The \texttt{except} block that matches the exception type is executed.
+    \end{itemize}
+\end{frame} 
+
+\begin{frame}[fragile]{Finally Block}
+    \begin{lstlisting}[style=colorful, language=Python]
+try:
+    x = 10 / 0  # Division by zero
+except ZeroDivisionError as e:
+    print("Error:", e)
+finally:
+    print("Finally block")
+    \end{lstlisting}
+    \begin{itemize}
+        \item The \texttt{finally} block is executed regardless of whether an exception occurs.
+        \item The \texttt{finally} block is useful for releasing resources or cleaning up.
+    \end{itemize}
+\end{frame}     
+
+
+\begin{frame}[fragile]{Example of Finally Block}
+    \begin{lstlisting}[style=colorful, language=Python]
+def read_file(file_path):
+    try:
+        file = open(file_path, 'r')
+        content = file.read()
+    except FileNotFoundError as e:
+        print(f"Error: {e}")
+    else:
+        print(f"File content:\n{content}")
+    finally:
+        # this is to handle the case when the file variable is not initialized
+        try:
+            file.close()
+        except NameError:
+            print("File is not open")
+        print("Execution of the try-except block is complete.")
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Raise an Exception Example}
+    \begin{lstlisting}[style=colorful, language=Python]
+if a_number < 0:
+    raise RuntimeError("You can't use a negative number")
+else:
+    print(math.sqrt(a_number))
+>>> math.sqrt(-23)
+Traceback (most recent call last):
+File "<pyshell#20>", line 2, in <module>
+raise RuntimeError("You can't use a negative number")
+RuntimeError: You can't use a negative number
+
+    \end{lstlisting}
+    \begin{itemize}
+        \item You can raise an exception using the \texttt{raise} statement.
+        \item The \texttt{raise} statement raises an exception with a specified message.
+    \end{itemize}
+\end{frame} 
+
+\begin{frame}{Common Exception Types in Python (Part 1)}
+    \begin{itemize}
+        \item \textbf{BaseException}: The base class for all built-in exceptions.
+        \item \textbf{Exception}: The base class for all non-exit exceptions.
+        \item \textbf{ArithmeticError}: The base class for all errors that occur for numeric calculations.
+            \begin{itemize}
+                \item \textbf{OverflowError}: Raised when the result of an arithmetic operation is too large to be expressed.
+                \item \textbf{ZeroDivisionError}: Raised when division or modulo by zero takes place.
+                \item \textbf{FloatingPointError}: Raised when a floating point operation fails.
+            \end{itemize}
+        \item \textbf{AttributeError}: Raised when an attribute reference or assignment fails.
+        \item \textbf{EOFError}: Raised when the \texttt{input()} function hits an end-of-file condition.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Common Exception Types in Python (Part 2)}
+    \begin{itemize}
+        \item \textbf{ImportError}: Raised when an import statement fails to find the module definition or when a \texttt{from ... import} fails to find a name that is to be imported.
+            \begin{itemize}
+                \item \textbf{ModuleNotFoundError}: A subclass of \textbf{ImportError} raised when a module could not be located.
+            \end{itemize}
+        \item \textbf{IndexError}: Raised when a sequence subscript is out of range.
+        \item \textbf{KeyError}: Raised when a dictionary key is not found.
+        \item \textbf{KeyboardInterrupt}: Raised when the user hits the interrupt key (normally \texttt{Control-C} or \texttt{Delete}).
+        \item \textbf{MemoryError}: Raised when an operation runs out of memory.
+        \item \textbf{NameError}: Raised when a local or global name is not found.
+            \begin{itemize}
+                \item \textbf{UnboundLocalError}: A subclass of \textbf{NameError} raised when a local variable is referenced before it has been assigned.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Common Exception Types in Python (Part 3)}
+    \begin{itemize}
+        \item \textbf{OSError}: Raised when a system function returns a system-related error.
+            \begin{itemize}
+                \item \textbf{FileNotFoundError}: Raised when a file or directory is requested but doesn't exist.
+                \item \textbf{PermissionError}: Raised when trying to run an operation without the adequate access rights.
+                \item \textbf{TimeoutError}: Raised when a system function timed out at the system level.
+            \end{itemize}
+        \item \textbf{RuntimeError}: Raised when an error is detected that doesn't fall in any of the other categories.
+            \begin{itemize}
+                \item \textbf{NotImplementedError}: Raised when an abstract method that needs to be implemented in an inherited class is not actually implemented.
+            \end{itemize}
+        \item \textbf{SyntaxError}: Raised when the parser encounters a syntax error.
+            \begin{itemize}
+                \item \textbf{IndentationError}: Raised when there is an incorrect indentation.
+                    \begin{itemize}
+                        \item \textbf{TabError}: Raised when indentation consists of inconsistent tabs and spaces.
+                    \end{itemize}
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Common Exception Types in Python (Part 4)}
+    \begin{itemize}
+        \item \textbf{TypeError}: Raised when an operation or function is applied to an object of inappropriate type.
+        \item \textbf{ValueError}: Raised when an operation or function receives an argument that has the right type but an inappropriate value.
+            \begin{itemize}
+                \item \textbf{UnicodeError}: Raised when a Unicode-related encoding or decoding error occurs.
+                    \begin{itemize}
+                        \item \textbf{UnicodeEncodeError}: Raised when a Unicode-related error occurs during encoding.
+                        \item \textbf{UnicodeDecodeError}: Raised when a Unicode-related error occurs during decoding.
+                        \item \textbf{UnicodeTranslateError}: Raised when a Unicode-related error occurs during translation.
+                    \end{itemize}
+            \end{itemize}
+        \item \textbf{StopIteration}: Raised by the \texttt{next()} function to indicate that there are no further items produced by the iterator.
+        \item \textbf{AssertionError}: Raised when an \texttt{assert} statement fails.
+    \end{itemize}
+\end{frame}

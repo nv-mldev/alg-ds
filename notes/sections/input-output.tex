@@ -1,0 +1,72 @@
+\section{Input and Output}
+\begin{frame}
+    \frametitle{Input and Output}
+    \begin{itemize}
+        \item Input and output are essential for interacting with the user.
+        \item Python provides built-in functions for reading input and displaying output.
+        \item The \texttt{input()} function reads input from the user.
+        \item The \texttt{print()} function displays output to the user.
+    \end{itemize}
+\end{frame} 
+
+\begin{frame}[fragile]{The \texttt{input()} Function}
+    \begin{itemize}
+        \item The \texttt{input()} function reads a line of text from the user.
+        \item The text is returned as a string.
+        \item The user must press the \texttt{Enter} key to submit the input.
+    \end{itemize}
+    \begin{lstlisting}[style=colorful, language=Python]
+>>> name = input("Enter your name: ")
+Enter your name: David
+>>> print(name)
+David
+    \end{lstlisting}    
+\end{frame}
+
+\begin{frame}[fragile]{}
+    \begin{lstlisting}[style=colorful, language=Python]
+>>> print("Hello")
+Hello
+>>> print("Hello", "World")
+Hello World
+>>> print("Hello", "World", sep="***")
+Hello***World
+>>> print("Hello", "World", end="***")
+Hello World***
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Formatting Strings}
+    \begin{lstlisting}[style=colorful, language=Python]
+>>> name = "David"
+>>> age = 32
+>>> print(f"My name is {name}. I am {age} years old.")
+My name is David. I am 32 years old.    
+    \end{lstlisting}  
+\end{frame}
+
+
+\begin{frame}{String Formatting Modifiers in Python (Part 1)}
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|l|l|p{6cm}|}
+            \hline
+            \textbf{Modifier} & \textbf{Example} & \textbf{Description} \\ \hline
+            \texttt{number} & \texttt{\%20d} & Put the value in a field width of 20 \\ \hline
+            \texttt{-} & \texttt{\%<20d} & Put the value in a field 20 characters wide, left-justified \\ \hline
+            \texttt{+} & \texttt{\%>20d} & Put the value in a field 20 characters wide, right-justified \\ \hline
+            \texttt{0} & \texttt{\%020d} & Put the value in a field 20 characters wide, fill in with leading zeros \\ \hline
+            \texttt{.} & \texttt{\%20.2f} & Put the value in a field 20 characters wide with 2 characters to the right of the decimal point \\ \hline
+        \end{tabular}
+        \caption{String Formatting Modifiers in Python (Part 1)}
+    \end{table}
+\end{frame}
+
+\begin{frame}[fragile]{String Formatting Modifiers in Python (Part 2)}
+    \begin{lstlisting}[style=colorful, language=Python]
+# In mac >20.2f is left justified and <20.2f is right justified
+>>> print(f"The price of the product is {1000.4567:>20.2f}") 
+The price of the product is           1,000.46
+    \end{lstlisting}
+\end{frame}
