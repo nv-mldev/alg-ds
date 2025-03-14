@@ -40,6 +40,11 @@ if x > 5
 # Runtime error: division by zero
 x = 10 / 0
     \end{lstlisting}
+    \begin{lstlisting}[style=colorful, language=Python]
+subtotal = input("Enter total before tax:")
+tax = .08 * subTotal
+print("tax on", subtotal, "is:", tax)
+\end{lstlisting}
 \end{frame} 
 
 \begin{frame}[fragile]{Logical Errors}
@@ -54,6 +59,12 @@ x = 10
 y = 20
 result = x + y  # Should be x * y
     \end{lstlisting}
+    \begin{lstlisting}[style=colorful, language=Python]
+num1 = input('Enter a number:')
+num2 = input('Enter another number:')
+sum = num1 + num2
+print('The sum of', num1, 'and', num2, 'is', sum)
+\end{lstlisting}
 \end{frame} 
 
 \begin{frame}[fragile]{Exception Handling Syntax}
