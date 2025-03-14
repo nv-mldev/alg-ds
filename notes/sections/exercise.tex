@@ -179,6 +179,42 @@ l_one[2][0] >= l_two[2]['k1']
     \end{lstlisting}
 \end{frame}
 
+\begin{frame}[fragile]
+\frametitle{Expression Evaluation}
+Please tell the order in which the Python interpreter would evaluate them
+\begin{lstlisting}[style=colorful, language=Python]
+x = 2
+y = 3
+square(sub((1+y),x)) 
+\end{lstlisting}
+\end{frame} 
+
+
+\begin{frame}{Answer}
+\begin{enumerate}
+    \item look up the variable to get the square function Object
+    \item look up the variable to get the sub function Object
+    \item look up the variable to get the y value = 3
+    \item add 1 and 3 to get 4
+    \item look up the variable to get the x value = 2
+    \item run the sub function passing 4 and 2 returning 2
+    \item run the square function passing 2 returning 4
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Expression Evaluation}
+Please tell the order in which the Python interpreter would evaluate them
+\begin{lstlisting}[style=colorful, language=Python]
+x = 2
+y = 3
+square(x + sub(square(y), 2 *x))
+\end{lstlisting}
+\end{frame} 
+
+
+
+
 \begin{frame}[fragile]{Naming Your Robot}
     \begin{itemize}
         \item Use \texttt{input()} to read the robot's name from the user.
@@ -238,3 +274,5 @@ def infinite_monkey(target):
 attempts = infinite_monkey(target)
 \end{lstlisting}
 \end{frame}
+
+
