@@ -1,23 +1,16 @@
-from viztracer import VizTracer
-import pdb
 
-tracer = VizTracer()
-tracer.start()
+# Static Scoping (Python)
+x = 10
 
-def add(a, b):
-    pdb.set_trace()  # Start debugger here
-    return a + b
+def outer():
+    x = 20
+    def inner():
+        print("Inside Inner (Python):", x) #static lookup
+    inner()
+    standalone()
 
-a = 10
-b = 20
-add(a, b)
+def standalone():
+    print("Inside Standalone (Python):", x) #static lookup
 
-tracer.stop()
-tracer.save("trace.json")
-
-x = 5
-y = x
-pdb.set_trace()  # Start debugger here
-x = 2
-print(y)
-print(y)
+outer()
+standalone()

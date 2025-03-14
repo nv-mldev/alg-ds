@@ -1,19 +1,5 @@
-\subsection{Objects and Data Structures}
+\section{Exercises}
 
-\begin{frame}
-\frametitle{Test your knowledge}
-Answer the following questions
-\end{frame}
-
-\begin{frame}
-\frametitle{Numbers}
-What is the \textit{type} of the result of the expression 3 + 1.5 + 4?
-\end{frame}
-
-\begin{frame}
-\frametitle{Numbers}
-What would you use to find a number’s square root, as well as its square?
-\end{frame}
 
 \begin{frame}
 \frametitle{Strings}
@@ -24,7 +10,7 @@ Given the string 'hello' give an index command that returns 'e'.
 \frametitle{Strings}
 Reverse the string 'hello' using slicing
 \pause
-\begin{lstlisting}[style=colorful, language=Python]
+ \begin{lstlisting}[language=Python]
     s  = 'hello'
     s[::-1]
 \end{lstlisting}
@@ -34,7 +20,7 @@ Reverse the string 'hello' using slicing
 \frametitle{Strings}
 Given the string hello, give two methods of producing the letter 'o' using indexing.
 \pause
-\begin{lstlisting}[style=colorful, language=Python]
+ \begin{lstlisting}[language=Python]
     s = 'hello'
     s[-1]
     s[4]
@@ -45,7 +31,7 @@ Given the string hello, give two methods of producing the letter 'o' using index
 \frametitle{Lists}
 Build this list [0,0,0] two separate ways.
 \pause
-\begin{lstlisting}[style=colorful, language=Python]
+ \begin{lstlisting}[language=Python]
     [0]*3
     [0,0,0]
 \end{lstlisting}
@@ -54,11 +40,11 @@ Build this list [0,0,0] two separate ways.
 \begin{frame}[fragile]
 \frametitle{Lists}
 Reassign 'hello' in this nested list to say 'goodbye' instead: 
-\begin{lstlisting}[style=colorful, language=Python]
+ \begin{lstlisting}[language=Python]
     list3 = [1,2,[3,4,'hello']]
 \end{lstlisting}
 \pause
-\begin{lstlisting}[style=colorful, language=Python]
+ \begin{lstlisting}[language=Python]
     list3[2][2] = 'goodbye'
 \end{lstlisting}
 \end{frame}
@@ -66,11 +52,11 @@ Reassign 'hello' in this nested list to say 'goodbye' instead:
 \begin{frame}[fragile]
 \frametitle{Lists}
 Sort the list below: 
-\begin{lstlisting}[style=colorful, language=Python]
+ \begin{lstlisting}[language=Python]
     list4 = [5,3,4,6,1]
 \end{lstlisting}
 \pause
-\begin{lstlisting}[style=colorful, language=Python]
+ \begin{lstlisting}[language=Python]
     list4.sort()
 \end{lstlisting}
 \end{frame}
@@ -78,7 +64,7 @@ Sort the list below:
 \begin{frame}[fragile]
 \frametitle{Dictionaries}
 Using keys and indexing, grab the 'hello' from the following dictionaries:
-\begin{lstlisting}[style=colorful, language=Python]
+ \begin{lstlisting}[language=Python]
     d = {'simple_key':'hello'}
     # Grab 'hello'
     d = {'k1':{'k2':'hello'}}
@@ -86,7 +72,7 @@ Using keys and indexing, grab the 'hello' from the following dictionaries:
     d = {'k1':[1,2,{'k2':['this is tricky',{'tough':[1,2,['hello']]}]}]}
 \end{lstlisting}
 \pause
-\begin{lstlisting}[style=colorful, language=Python]
+ \begin{lstlisting}[language=Python]
     d['simple_key']
     d['k1']['k2']
     d['k1'][0]['nest_key'][1][0]
@@ -166,7 +152,7 @@ Use a set to find the unique values of the list below:
 \begin{frame}[fragile]
 \frametitle{Booleans}
 What will be the resulting Boolean of the following pieces of code 
-\begin{lstlisting}[style=colorful, language=Python]
+ \begin{lstlisting}[language=Python]
     2 > 3
     3 <= 2
     3 == 2.0
@@ -182,7 +168,7 @@ l_one[2][0] >= l_two[2]['k1']
 \begin{frame}[fragile]
 \frametitle{Expression Evaluation}
 Please tell the order in which the Python interpreter would evaluate them
-\begin{lstlisting}[style=colorful, language=Python]
+ \begin{lstlisting}[language=Python]
 x = 2
 y = 3
 square(sub((1+y),x)) 
@@ -205,7 +191,7 @@ square(sub((1+y),x))
 \begin{frame}[fragile]
 \frametitle{Expression Evaluation}
 Please tell the order in which the Python interpreter would evaluate them
-\begin{lstlisting}[style=colorful, language=Python]
+ \begin{lstlisting}[language=Python]
 x = 2
 y = 3
 square(x + sub(square(y), 2 *x))
@@ -222,7 +208,7 @@ square(x + sub(square(y), 2 *x))
         \item Assign an identifier to the robot, e.g., \texttt{identifier = 1000}.
         \item Print a message from the robot using \texttt{print()}.
     \end{itemize}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 >>> name = input("Enter the robot's name: ")
 >>> identifier = 1000
 >>> print(f"Hello. My name is {name}. My ID is {identifier}.")
@@ -234,7 +220,7 @@ square(x + sub(square(y), 2 *x))
         \item User provides the number of rows \(R\), number of columns \(C\), and a 2D index \((r, c)\)
         \item Convert the 2D index \((r, c)\) to a 1D index \(s\) using row-major ordering.
     \end{itemize}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 # Get user input
 R = int(input("Enter the number of rows: "))
 C = int(input("Enter the number of columns: "))
@@ -247,7 +233,7 @@ print(f"The 1D index is: {s}")
 \end{frame}
 
 \begin{frame}[fragile]{Infinite Monkey Theorem}
-\begin{lstlisting}[style=colorful, language=Python]
+ \begin{lstlisting}[language=Python]
 import string 
 import random 
 char_dictionary = string.ascii_lowercase+' '
@@ -261,7 +247,7 @@ def genrate_random_string(length):
 \end{frame}
 
 \begin{frame}[fragile]{Infinite Monkey Theorem}
-\begin{lstlisting}[style=colorful, language=Python]
+ \begin{lstlisting}[language=Python]
 def infinite_monkey(target):
     target_length = len(target)
     iteration = 0

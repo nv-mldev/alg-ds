@@ -22,7 +22,7 @@
 \end{frame}
 \subsection{If Statements}
 \begin{frame}[fragile]{If Statement Syntax}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 if condition:
     # code block
     \end{lstlisting}
@@ -34,7 +34,7 @@ if condition:
 \end{frame}
 
 \begin{frame}[fragile]{If Statement Example}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 x = 10  # Assign a value to x
 if x > 5:  # Check if x is greater than 5
     print("x is greater than 5")  # Print a message
@@ -46,7 +46,7 @@ if x > 5:  # Check if x is greater than 5
 \end{frame}
 
 \begin{frame}[fragile]{If-Else Statement Syntax}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 if condition:
     # code block 1
 else:  
@@ -60,7 +60,7 @@ else:
 
 
 \begin{frame}[fragile]{If-Else Statement Example}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 x = 3  # Assign a value to x
 if x > 5:  # Check if x is greater than 5
     print("x is greater than 5")  # Print a message
@@ -83,7 +83,7 @@ else:  # If x is not greater than 5
 \end{frame}
 
 \begin{frame}[fragile]{Nested If Statements Example}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 x = 10  # Assign a value to x
 if x > 5:  # Check if x is greater than 5
     if x < 15:  # Check if x is less than 15
@@ -97,7 +97,7 @@ if x > 5:  # Check if x is greater than 5
 \end{frame}
 
 \begin{frame}[fragile]{If-Elif-Else Statement Syntax}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 if condition1:
     # code block 1
 elif condition2:
@@ -126,7 +126,7 @@ else:
 \end{frame}
 \subsection{For Loops}
 \begin{frame}[fragile]{For Loop Syntax}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 for item in iterable:
     # code block
     \end{lstlisting}
@@ -137,7 +137,7 @@ for item in iterable:
 \end{frame}
 
 \begin{frame}[fragile]{For Loop Example}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 for i in range(5):
     print(i)
     \end{lstlisting}
@@ -148,7 +148,7 @@ for i in range(5):
 \end{frame}
 
 \begin{frame}[fragile]{For Loop Example (2)}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 >>> fruits = ["apple", "banana", "cherry"]
 >>> for fruit in fruits:
 >>>    print(fruit)
@@ -165,7 +165,7 @@ cherry
 \subsection{While Loops}
 \begin{frame}[fragile]
     \frametitle{While Loop Syntax}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 while condition:
     # code block
     \end{lstlisting}
@@ -176,7 +176,7 @@ while condition:
 \end{frame}
 
 \begin{frame}[fragile]{While Loop Example}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 i = 0
 while i < 5:
     print(i)
@@ -208,7 +208,7 @@ while i < 5:
 \end{frame}
 
 \begin{frame}[fragile]{List Comprehension Example (1)}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 >>> sq_list = []
 >>> for x in range(1, 11):
 sq_list.append(x * x)
@@ -221,7 +221,7 @@ sq_list.append(x * x)
 \end{frame}
 
 \begin{frame}[fragile]{List Comprehension Example (2)}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 >>> even_sq_list = [x * x for x in range(1, 11) if x % 2 == 0]
 >>> even_sq_list
 [4, 16, 36, 64, 100]
@@ -236,7 +236,7 @@ sq_list.append(x * x)
     \item It is often used with loops to calculate a sum, product, or other aggregate value.
     \item The accumulator pattern typically involves initializing an accumulator variable to an initial value and updating it in each iteration of the loop.
 \end{itemize}
-\begin{lstlisting}[style=colorful, language=Python]
+ \begin{lstlisting}[language=Python]
 total = 0
 for i in range(1, 6):
     total += i
@@ -244,7 +244,3 @@ print(total)    # Output: 15
 \end{lstlisting}
 \end{frame}
 
-
-
-
-\frametitle{Summary}

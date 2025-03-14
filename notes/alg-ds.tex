@@ -7,32 +7,31 @@
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{tcolorbox}
-% Define custom colors
-\definecolor{background}{RGB}{240,240,240}  % Light gray
-\definecolor{keyword}{RGB}{0,102,204}       % Blue
-\definecolor{comment}{RGB}{0,153,51}        % Green
-\definecolor{string}{RGB}{204,51,0}         % Dark red
-\definecolor{identifier}{RGB}{0,0,0}        % Black
-\definecolor{number}{RGB}{153,0,153}        % Purple
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
-\lstdefinestyle{colorful}{
-    backgroundcolor=\color{background},
-    keywordstyle=\color{keyword}\bfseries,
-    commentstyle=\color{comment}\itshape,
-    stringstyle=\color{string},
-    identifierstyle=\color{identifier},
-    numberstyle=\color{number},
-    basicstyle=\ttfamily\small,
-    breaklines=true,
-    frame=single,
-    framerule=2pt,
-    rulecolor=\color{keyword},
-    numbersep=8pt,
-    numberstyle=\color{number},
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
     showstringspaces=false,
-    tabsize=4,
-    language=Python
+    showtabs=false,                  
+    tabsize=2
 }
+
+\lstset{style=mystyle}
 \title{Introduction to Python, Data Structures and Algorithms}
 \author{Nithin Vadekkapat}
 \date{\today}
@@ -45,7 +44,12 @@
 
 \begin{frame}
     \frametitle{Table of Contents}
-    \tableofcontents
+    \tableofcontents[sections={1-4},hideallsubsections]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[sections={5-8},hideallsubsections]
 \end{frame}
 
 

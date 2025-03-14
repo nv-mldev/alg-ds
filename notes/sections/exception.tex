@@ -23,7 +23,7 @@
         \item The Python interpreter cannot execute code with syntax errors.
         \item Syntax errors are detected during the parsing phase.
     \end{itemize}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 # Syntax error: missing colon
 if x > 5
     print("x is greater than 5")
@@ -36,11 +36,11 @@ if x > 5
         \item They are also known as exceptions.
         \item Runtime errors can be handled using exception handling.
     \end{itemize}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 # Runtime error: division by zero
 x = 10 / 0
     \end{lstlisting}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 subtotal = input("Enter total before tax:")
 tax = .08 * subTotal
 print("tax on", subtotal, "is:", tax)
@@ -53,13 +53,13 @@ print("tax on", subtotal, "is:", tax)
         \item The code is syntactically correct and does not raise any exceptions.
         \item Logical errors are the most challenging to debug.
     \end{itemize}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 # Logical error: incorrect calculation
 x = 10
 y = 20
 result = x + y  # Should be x * y
     \end{lstlisting}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 num1 = input('Enter a number:')
 num2 = input('Enter another number:')
 sum = num1 + num2
@@ -68,7 +68,7 @@ print('The sum of', num1, 'and', num2, 'is', sum)
 \end{frame} 
 
 \begin{frame}[fragile]{Exception Handling Syntax}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 try:            # Try block
     # code that may raise an exception
 except Exception as e:  # Exception block
@@ -82,7 +82,7 @@ except Exception as e:  # Exception block
 \end{frame}
 
 \begin{frame}[fragile]{Exception Handling Example}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 try:
     x = 10 / 0  # Division by zero
 except ZeroDivisionError as e:
@@ -95,7 +95,7 @@ except ZeroDivisionError as e:
 \end{frame} 
 
 \begin{frame}[fragile]{Exception Handling Example (Part 2)}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 >>> a_number = int(input("Please enter an integer "))
 Please enter an integer -23
 >>> print(math.sqrt(a_number))
@@ -120,7 +120,7 @@ Using absolute value instead
 
 
 \begin{frame}[fragile]{Multiple Exceptions}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 try:
     x = 10 / 0  # Division by zero
 except ZeroDivisionError as e:
@@ -135,7 +135,7 @@ except Exception as e:
 \end{frame} 
 
 \begin{frame}[fragile]{Finally Block}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 try:
     x = 10 / 0  # Division by zero
 except ZeroDivisionError as e:
@@ -151,7 +151,7 @@ finally:
 
 
 \begin{frame}[fragile]{Example of Finally Block}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 def read_file(file_path):
     try:
         file = open(file_path, 'r')
@@ -171,7 +171,7 @@ def read_file(file_path):
 \end{frame}
 
 \begin{frame}[fragile]{Raise an Exception Example}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 if a_number < 0:
     raise RuntimeError("You can't use a negative number")
 else:

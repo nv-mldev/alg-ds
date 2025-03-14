@@ -1,7 +1,4 @@
-\section{functions}
-
-\label{sec:functions}  
-
+\section{Functions}
 
 \begin{frame}{Python Functions}
     \begin{itemize}
@@ -56,9 +53,43 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-    \frametitle{Function Definition}
-    \lstinputlisting[style=colorful, language=Python]{/Users/nithinvadekkapat/work/alg-ds/scripts/square-root.py}
-\end{frame}
+% \begin{frame}[fragile]
+%     \frametitle{Function Definition}
+%     \lstinputlisting[style=colorful, language=Python]{/Users/nithinvadekkapat/work/alg-ds/scripts/square-root.py}
+% \end{frame}
 
-    
+
+\begin{frame}{Introduction to Scoping}
+    \begin{itemize}
+      \item Scoping determines how variables are accessed.
+      \item It's like rules for finding the "right box" (variable).
+      \item Two main types: Static and Dynamic.
+    \end{itemize}
+  \end{frame}
+  
+  \begin{frame}[fragile]{Static Scoping (Python)}
+    \begin{itemize}
+      \item Scope determined by code structure (lexical).
+      \item Determined at compile time.
+    \end{itemize}
+    \begin{lstlisting}[language=Python]
+  x = 10
+  def outer():
+      x = 20
+      def inner():
+          print("Inside Inner (Python):", x)
+      inner()
+      standalone()
+  
+  def standalone():
+      print("Inside Standalone (Python):", x)
+  
+  outer()
+  standalone()
+    \end{lstlisting}
+  \end{frame}
+
+
+
+   
+

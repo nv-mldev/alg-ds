@@ -78,7 +78,7 @@
         \item Some operators are not limited to arithmetic operations with numbers.
         \item For example, \texttt{+} and \texttt{*} can be used for a different kind of operation when used with strings.
     \end{itemize}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 >>> 'hello' + 'world'
 'helloworld'
 >>> 'hello' * 3
@@ -114,7 +114,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{Variable Assignment}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 >>> x = 20
 >>> y = x
 >>> x = "hello"
@@ -136,7 +136,7 @@ hello
 \end{frame}
 
 \begin{frame}[fragile]{Reserved Keywords}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
      >>> import keyword
      >>> keyword.kwlist      
     \end{lstlisting}
@@ -161,7 +161,7 @@ hello
 
 
 \begin{frame}[fragile]{Python Quiz-1}
-\begin{lstlisting}[style=colorful, language=Python]
+ \begin{lstlisting}[language=Python]
 >>> 5 == 5.0000
 >>> 1+2 == 3 
 >>> 9 > 8.999999999999999
@@ -177,7 +177,7 @@ hello
         \item However, comparisons involving inequality are less likely to be affected.
         \item Example: \texttt{9 > 8.999999999999999} evaluates to \texttt{True}.
     \end{itemize}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 >>> 1.1 + 2.2 == 3.3
 False
 >>> 9 > 8.999999999999999
@@ -187,7 +187,7 @@ True
 
 \begin{frame}[fragile]
     \frametitle{Python Quiz-2}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
 >>> 5 != 5.0000
 >>> True != False
 >>> False < True
@@ -206,12 +206,12 @@ True
     \begin{itemize}
       \item Consider checking if a variable \texttt{x} is within a specific range.
       \item Without chained comparisons:
-        \begin{lstlisting}[style=colorful, language=Python]
+        \begin{lstlisting}[language=Python]
   if 10 < x and x < 20:
       # ...
         \end{lstlisting}
       \item With chained comparisons:
-        \begin{lstlisting}[style=colorful, language=Python]
+        \begin{lstlisting}[language=Python]
   if 10 < x < 20:
       # ...
         \end{lstlisting}
@@ -220,7 +220,7 @@ True
   \end{frame}
   
   \begin{frame}[fragile]{Example 2: Multiple Comparisons}
-    \begin{lstlisting}[style=colorful, language=Python]
+    \begin{lstlisting}[language=Python]
   x = 5
   y = 10
   z = 15
@@ -233,7 +233,7 @@ True
   \end{frame}
   
   \begin{frame}[fragile]{Example 3: Equality and Inequality}
-      \begin{lstlisting}[style=colorful, language=Python]
+      \begin{lstlisting}[language=Python]
   a = 10
   b = 10
   c = 15
