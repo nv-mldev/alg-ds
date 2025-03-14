@@ -1,4 +1,5 @@
 \section{functions}
+
 \label{sec:functions}  
 
 
@@ -56,15 +57,8 @@
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{Function Definition- Square root Funtion }
-    \begin{lstlisting}[style=colorful, language=Python]
-def square_root(x):
-'''
-Function to calculate the square root of a number using Newton's method
-'''
-    guess = x / 2
-    while abs(guess**2 - x) > 0.0001:
-        guess = (guess + (x / guess)) / 2
-    return guess
-    \end{lstlisting}
+    \frametitle{Function Definition}
+    \lstinputlisting[style=colorful, language=Python]{/Users/nithinvadekkapat/work/alg-ds/scripts/square-root.py}
 \end{frame}
+
+    

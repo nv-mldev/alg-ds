@@ -1,0 +1,127 @@
+\section{Modules}
+\begin{frame}{What is a Module?}
+    \begin{itemize}
+        \item A module is a file containing Python code.
+        \item Modules can define functions, classes, and variables.
+        \item Modules can also include runnable code.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Namespaces}
+    \begin{itemize}
+    \item Functions imported as part of a module live in their own namespace. 
+    \item A \textbf{namespace} is simply a space within which all names are distinct from each other. 
+    \item The same name can be reused in different namespaces but two objects can’t have the same name within a single namespace
+    \item One example of a namespace is the set of street names within a single city. Many cities have a street called “Main Street”, but it’s very confusing if two streets in the same city have that name!
+    \item Another example is the folder organization of file systems. You can have a file called \texttt{todo} \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Importing Modules in Python}
+    \begin{itemize}
+        \item If you have a file \texttt{myprog.py} in directory \texttt{~/Desktop/mycode/}, and \texttt{myprog.py} contains \texttt{import morecode}:
+        \begin{itemize}
+            \item The Python interpreter will look for a file called \texttt{morecode.py}.
+            \item It will execute the code in \texttt{morecode.py}.
+            \item The object bindings from \texttt{morecode.py} will be available for reference in \texttt{myprog.py}.
+        \end{itemize}
+        \item Note that the import statement is \texttt{import morecode}, not \texttt{import morecode.py}.
+        \item The file must be named \texttt{morecode.py}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Importing Modules}
+    \begin{itemize}
+        \item To use a module, you must import it.
+        \item You can import an entire module or specific functions from a module.
+        \item You can also import a module with an alias.
+    \end{itemize}
+\end{frame} 
+
+
+\begin{frame}[fragile]{Importing Modules}
+    \begin{itemize}
+        \item Import the entire module:
+    \end{itemize}
+
+    \begin{lstlisting}[style=colorful, language=Python]
+import math
+print(math.sqrt(16))
+    \end{lstlisting}
+
+    \begin{itemize}
+        \item Import specific functions:
+    \end{itemize}
+
+    \begin{lstlisting}[style=colorful, language=Python]
+from math import sqrt
+print(sqrt(16))
+    \end{lstlisting}
+\end{frame}     
+
+
+\begin{frame}[fragile]{Importing Modules}
+    \begin{itemize}
+        \item Import a module with an alias:
+    \end{itemize}
+
+    \begin{lstlisting}[style=colorful, language=Python]
+import math as m        
+print(m.sqrt(16))
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}{Standard Library}
+    \begin{itemize}
+        \item Python has a large standard library.
+        \item The standard library is a collection of modules that come with Python.
+        \item You can use these modules in your programs.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Standard Library}
+    \begin{itemize}
+        \item Some common modules in the standard library:
+        \begin{itemize}
+            \item \texttt{math} - Mathematical functions
+            \item \texttt{random} - Random number generators
+            \item \texttt{os} - Operating system interfaces
+            \item \texttt{sys} - System-specific parameters and functions
+            \item \texttt{datetime} - Date and time functions
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Third-Party Libraries}
+    \begin{itemize}
+        \item Python has a large ecosystem of third-party libraries.
+        \item Third-party libraries are not part of the standard library.
+        \item You can install third-party libraries using \texttt{pip}.
+    \end{itemize}
+\end{frame} 
+
+\begin{frame}{Third-Party Libraries}
+    \begin{itemize}
+        \item Some common third-party libraries:
+        \begin{itemize}
+            \item \texttt{numpy} - Numerical computing
+            \item \texttt{pandas} - Data manipulation and analysis
+            \item \texttt{matplotlib} - Plotting and visualization
+            \item \texttt{requests} - HTTP library
+            \item \texttt{flask} - Web development
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Summary}
+    \begin{itemize}
+        \item A module is a file containing Python code.
+        \item Modules can define functions, classes, and variables.
+        \item Modules can also include runnable code.
+        \item Functions imported as part of a module live in their own namespace.
+        \item To use a module, you must import it.
+        \item You can import an entire module or specific functions from a module.
+        \item You can also import a module with an alias.
+    \end{itemize}
+\end{frame}
+\end{document}
