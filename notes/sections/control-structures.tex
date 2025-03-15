@@ -1,5 +1,6 @@
 
 \section{Control Structures}
+
 \begin{frame}
     \frametitle{Control Structures}
     \begin{itemize}
@@ -12,6 +13,16 @@
         \end{itemize}
     \end{itemize}
 \end{frame}
+
+\begin{frame}
+    \frametitle{Conditional Statement}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{pics/introduction/conditional.png}
+        \caption{Conditional Statement}
+    \end{figure}
+\end{frame}
+
 \begin{frame}
     \frametitle{Conditional Statements}
     \begin{itemize}
@@ -20,6 +31,8 @@
         \item The \texttt{if} statement evaluates a condition and executes a block of code if the condition is \texttt{True}.
     \end{itemize}
 \end{frame}
+
+
 \subsection{If Statements}
 \begin{frame}[fragile]{If Statement Syntax}
     \begin{lstlisting}[language=Python]
@@ -149,9 +162,9 @@ for i in range(5):
 
 \begin{frame}[fragile]{For Loop Example (2)}
     \begin{lstlisting}[language=Python]
->>> fruits = ["apple", "banana", "cherry"]
->>> for fruit in fruits:
->>>    print(fruit)
+  fruits = ["apple", "banana", "cherry"]
+  for fruit in fruits:
+     print(fruit)
 apple
 banana
 cherry
@@ -209,23 +222,23 @@ while i < 5:
 
 \begin{frame}[fragile]{List Comprehension Example (1)}
     \begin{lstlisting}[language=Python]
->>> sq_list = []
->>> for x in range(1, 11):
+  sq_list = []
+  for x in range(1, 11):
 sq_list.append(x * x)
->>> sq_list
+  sq_list
 [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
->>> sq_list = [x * x for x in range(1, 11)]
->>> sq_list
+  sq_list = [x * x for x in range(1, 11)]
+  sq_list
 [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
     \end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]{List Comprehension Example (2)}
     \begin{lstlisting}[language=Python]
->>> even_sq_list = [x * x for x in range(1, 11) if x % 2 == 0]
->>> even_sq_list
+  even_sq_list = [x * x for x in range(1, 11) if x % 2 == 0]
+  even_sq_list
 [4, 16, 36, 64, 100]
->>>[ch.upper() for ch in 'comprehension' if ch not in 'aeiou']
+ [ch.upper() for ch in 'comprehension' if ch not in 'aeiou']
     \end{lstlisting}
 \end{frame}
 

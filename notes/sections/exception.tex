@@ -96,14 +96,14 @@ except ZeroDivisionError as e:
 
 \begin{frame}[fragile]{Exception Handling Example (Part 2)}
     \begin{lstlisting}[language=Python]
->>> a_number = int(input("Please enter an integer "))
+  a_number = int(input("Please enter an integer "))
 Please enter an integer -23
->>> print(math.sqrt(a_number))
+  print(math.sqrt(a_number))
 Traceback (most recent call last):
 File "<pyshell#102>", line 1, in <module>
 print(math.sqrt(a_number))
 ValueError: math domain error
->>> try:
+  try:
 print(math.sqrt(a_number))
 except:
 print("Bad Value for square root")
@@ -112,7 +112,7 @@ print(math.sqrt(abs(a_number)))
 Bad Value for square root
 Using absolute value instead
 4.795831523312719
->>>
+ 
  \end{lstlisting}
 \end{frame}
 
@@ -176,7 +176,7 @@ if a_number < 0:
     raise RuntimeError("You can't use a negative number")
 else:
     print(math.sqrt(a_number))
->>> math.sqrt(-23)
+  math.sqrt(-23)
 Traceback (most recent call last):
 File "<pyshell#20>", line 2, in <module>
 raise RuntimeError("You can't use a negative number")

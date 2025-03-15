@@ -1,12 +1,16 @@
-\section{Atomic Data Types}
+\section{Introduction}
+
+\subsection{Atomic Datatypes}
+
 \begin{frame}{Objects}
-    \begin{itemize}
+\begin{itemize}
         \item Everything in Python is an object
         \item Objects have attributes and methods
         \item Objects can be created from classes
         \item Classes define the attributes and methods of objects
     \end{itemize}
 \end{frame}
+
 \begin{frame}
     \begin{figure}
         \centering
@@ -14,6 +18,7 @@
         \caption{Objects in Python}
     \end{figure}
 \end{frame}
+
 \begin{frame}{Built in atomic datatypes}
     \begin{itemize}
         \item Python provides built-in data types
@@ -27,6 +32,7 @@
         \end{itemize}
     \end{itemize}
 \end{frame}
+
 \begin{frame}{Operators and Expressions}
     \begin{columns}
         \column{0.5\textwidth}
@@ -79,9 +85,9 @@
         \item For example, \texttt{+} and \texttt{*} can be used for a different kind of operation when used with strings.
     \end{itemize}
     \begin{lstlisting}[language=Python]
->>> 'hello' + 'world'
+  'hello' + 'world'
 'helloworld'
->>> 'hello' * 3
+  'hello' * 3
 'hellohellohello'
     \end{lstlisting}
 \end{frame}
@@ -115,12 +121,12 @@
 
 \begin{frame}[fragile]{Variable Assignment}
     \begin{lstlisting}[language=Python]
->>> x = 20
->>> y = x
->>> x = "hello"
->>> print(y)
+  x = 20
+  y = x
+  x = "hello"
+  print(y)
 20
->>> print(x)
+  print(x)
 hello
     \end{lstlisting}
 \end{frame}
@@ -137,8 +143,8 @@ hello
 
 \begin{frame}[fragile]{Reserved Keywords}
     \begin{lstlisting}[language=Python]
-     >>> import keyword
-     >>> keyword.kwlist      
+       import keyword
+       keyword.kwlist      
     \end{lstlisting}
 \end{frame} 
 
@@ -162,10 +168,10 @@ hello
 
 \begin{frame}[fragile]{Python Quiz-1}
  \begin{lstlisting}[language=Python]
->>> 5 == 5.0000
->>> 1+2 == 3 
->>> 9 > 8.999999999999999
->>> 6 // 3 == 6.0 / 3.0
+  5 == 5.0000
+  1+2 == 3 
+  9 > 8.999999999999999
+  6 // 3 == 6.0 / 3.0
 \end{lstlisting}
 \end{frame}
 
@@ -178,9 +184,9 @@ hello
         \item Example: \texttt{9 > 8.999999999999999} evaluates to \texttt{True}.
     \end{itemize}
     \begin{lstlisting}[language=Python]
->>> 1.1 + 2.2 == 3.3
+  1.1 + 2.2 == 3.3
 False
->>> 9 > 8.999999999999999
+  9 > 8.999999999999999
 True
     \end{lstlisting}
 \end{frame}
@@ -188,10 +194,10 @@ True
 \begin{frame}[fragile]
     \frametitle{Python Quiz-2}
     \begin{lstlisting}[language=Python]
->>> 5 != 5.0000
->>> True != False
->>> False < True
->>> "10" > "2"
+  5 != 5.0000
+  True != False
+  False < True
+  "10" > "2"
     \end{lstlisting}
 \end{frame}
 \begin{frame}{What are Chained Comparisons?}

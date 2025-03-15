@@ -16,22 +16,22 @@
         \item The user must press the \texttt{Enter} key to submit the input.
     \end{itemize}
     \begin{lstlisting}[language=Python]
->>> name = input("Enter your name: ")
+  name = input("Enter your name: ")
 Enter your name: David
->>> print(name)
+  print(name)
 David
     \end{lstlisting}    
 \end{frame}
 
 \begin{frame}[fragile]{}
     \begin{lstlisting}[language=Python]
->>> print("Hello")
+  print("Hello")
 Hello
->>> print("Hello", "World")
+  print("Hello", "World")
 Hello World
->>> print("Hello", "World", sep="***")
+  print("Hello", "World", sep="***")
 Hello***World
->>> print("Hello", "World", end="***")
+  print("Hello", "World", end="***")
 Hello World***
     \end{lstlisting}
 \end{frame}
@@ -39,9 +39,9 @@ Hello World***
 \begin{frame}[fragile]
     \frametitle{Formatting Strings}
     \begin{lstlisting}[language=Python]
->>> name = "David"
->>> age = 32
->>> print(f"My name is {name}. I am {age} years old.")
+  name = "David"
+  age = 32
+  print(f"My name is {name}. I am {age} years old.")
 My name is David. I am 32 years old.    
     \end{lstlisting}  
 \end{frame}
@@ -66,7 +66,7 @@ My name is David. I am 32 years old.
 \begin{frame}[fragile]{String Formatting Modifiers in Python (Part 2)}
     \begin{lstlisting}[language=Python]
 # In mac >20.2f is left justified and <20.2f is right justified
->>> print(f"The price of the product is {1000.4567:>20.2f}") 
+  print(f"The price of the product is {1000.4567:>20.2f}") 
 The price of the product is           1,000.46
     \end{lstlisting}
 \end{frame}
