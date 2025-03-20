@@ -57,40 +57,6 @@
         \end{figure}
     \end{columns}
 \end{frame}
-\begin{frame}{Python Operator Precedence}
-    \begin{itemize}
-        \item Python evaluates expressions based on operator precedence.
-        \item Common operators in order of precedence (from highest to lowest):
-        \begin{itemize}
-            \item \texttt{()} -- Parentheses
-            \item \texttt{**} -- Exponentiation
-            \item \texttt{+x}, \texttt{-x}, \texttt{\textasciitilde{}x} -- Unary plus, Unary minus, Bitwise NOT
-            \item \texttt{*}, \texttt{/}, \texttt{//}, \texttt{\%} -- Multiplication, Division, Floor division, Modulus
-            \item \texttt{+}, \texttt{-} -- Addition, Subtraction
-            \item \texttt{<<}, \texttt{>>} -- Bitwise shift operators
-            \item \texttt{\&} -- Bitwise AND
-            \item \texttt{\textasciicircum} -- Bitwise XOR
-            \item \texttt{|} -- Bitwise OR
-            \item \texttt{==}, \texttt{!=}, \texttt{>}, \texttt{<}, \texttt{>=}, \texttt{<=}, \texttt{is}, \texttt{is not}, \texttt{in}, \texttt{not in} -- Comparisons, Identity, Membership
-            \item \texttt{not} -- Logical NOT
-            \item \texttt{and} -- Logical AND
-            \item \texttt{or} -- Logical OR
-        \end{itemize}
-        \item Example: \texttt{1 + 2 * 3 == 7} evaluates as \texttt{1 + (2 * 3) == 7}, which is \texttt{1 + 6 == 7}, resulting in \texttt{True}.
-    \end{itemize}
-\end{frame}
-\begin{frame}[fragile]{Overloaded Operators}
-    \begin{itemize}
-        \item Some operators are not limited to arithmetic operations with numbers.
-        \item For example, \texttt{+} and \texttt{*} can be used for a different kind of operation when used with strings.
-    \end{itemize}
-    \begin{lstlisting}[language=Python]
-  'hello' + 'world'
-'helloworld'
-  'hello' * 3
-'hellohellohello'
-    \end{lstlisting}
-\end{frame}
 
 \begin{frame}{Variables}
     In Python, a variable is simply a name or a label that points to an object instance in memory
@@ -129,16 +95,6 @@
   print(x)
 hello
     \end{lstlisting}
-\end{frame}
-
-
-\begin{frame}{Naming Variables}
-    \begin{itemize}
-        \item Variable names must start with a letter or an underscore
-        \item The rest of the name can contain letters, numbers, and underscores
-        \item Variable names are case-sensitive
-        \item Variable names should be descriptive
-    \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Reserved Keywords}
@@ -200,6 +156,8 @@ True
   "10" > "2"
     \end{lstlisting}
 \end{frame}
+
+
 \begin{frame}{What are Chained Comparisons?}
     \begin{itemize}
       \item Python allows multiple comparison operators to be chained together in a single expression.
